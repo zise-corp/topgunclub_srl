@@ -11,7 +11,7 @@ import { SOCIALS, PHONE_DISPLAY, waLink } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contacto, Ubicación y FAQ · Top Gun Club SRL',
   description:
-    'Contactá a Top Gun Club SRL en Cochabamba, Bolivia. Reservá por WhatsApp (+591 69500967), consultá horarios, ubicación y preguntas frecuentes sobre tiro deportivo, airsoft y eventos.',
+    'Contactá a Top Gun Club SRL en Cochabamba, Bolivia. Reservá por WhatsApp (+591 69500967) para cursos de tiro, airsoft, PCP, cumpleaños infantiles y torneos mensuales.',
 };
 
 export default function ContactoPage() {
@@ -22,7 +22,7 @@ export default function ContactoPage() {
         crumb="Contacto"
         label="Cochabamba, Bolivia"
         title={<>Hablemos & <span className="hl" style={{ display: 'inline' }}>reservá</span></>}
-        sub="Escribinos por WhatsApp para reservar tu cupo, cotizar un evento o resolver cualquier duda. Estamos para ayudarte."
+        sub="Escribinos por WhatsApp para reservar tu cupo, cotizar un cumpleaños o resolver cualquier duda. Estamos para ayudarte."
       />
 
       {/* Contacto + formulario */}
@@ -66,7 +66,7 @@ export default function ContactoPage() {
                 <div className="ic"><Icon name="clock" /></div>
                 <div>
                   <h4>Horarios</h4>
-                  <p>Lunes a Domingo · <span style={{ color: 'var(--faint)' }}>horario editable</span></p>
+                  <p>Lunes a Domingo · <span style={{ color: 'var(--faint)' }}>consultá horarios por WhatsApp</span></p>
                 </div>
               </div>
               <div className="info-row" style={{ borderBottom: 'none' }}>

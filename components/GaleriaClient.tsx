@@ -5,20 +5,43 @@ import { SOCIALS } from '@/lib/site';
 import Ph from './Ph';
 import Icon from './Icon';
 
-const CATS = ['Todo', 'Tiro', 'Airsoft', 'Eventos', 'Instalaciones'] as const;
+const CATS = ['Todo', 'Armas de Fuego', 'Airsoft', 'PCP', 'Arco y Flecha', 'Cumpleaños', 'Torneos', 'Instalaciones'] as const;
+
 const ITEMS = [
-  { cat: 'Tiro', label: 'Sesión de tiro', h: 300 },
-  { cat: 'Instalaciones', label: 'Polígono bajo techo', h: 420 },
+  // Armas de Fuego
+  { cat: 'Armas de Fuego', label: 'Sesión de tiro', h: 300 },
+  { cat: 'Armas de Fuego', label: 'Línea de tiro', h: 380 },
+  { cat: 'Armas de Fuego', label: 'Práctica supervisada', h: 340 },
+  
+  // Airsoft
   { cat: 'Airsoft', label: 'Acción airsoft', h: 340 },
-  { cat: 'Eventos', label: 'Evento corporativo', h: 260 },
-  { cat: 'Tiro', label: 'Línea de tiro', h: 380 },
-  { cat: 'Instalaciones', label: 'Distancias del rango', h: 300 },
-  { cat: 'Eventos', label: 'Celebración en grupo', h: 440 },
   { cat: 'Airsoft', label: 'Equipo táctico', h: 280 },
-  { cat: 'Tiro', label: 'Práctica supervisada', h: 340 },
-  { cat: 'Eventos', label: 'Zona de comida', h: 300 },
-  { cat: 'Instalaciones', label: 'Área de eventos', h: 380 },
   { cat: 'Airsoft', label: 'Escenario de juego', h: 320 },
+  
+  // PCP
+  { cat: 'PCP', label: 'Tiro de precisión', h: 360 },
+  { cat: 'PCP', label: 'Postura olímpica', h: 300 },
+  { cat: 'PCP', label: 'Concentración máxima', h: 340 },
+  
+  // Arco y Flecha
+  { cat: 'Arco y Flecha', label: 'Técnica de arco', h: 320 },
+  { cat: 'Arco y Flecha', label: 'Próximamente', h: 280 },
+  
+  // Cumpleaños
+  { cat: 'Cumpleaños', label: 'Celebración infantil', h: 440 },
+  { cat: 'Cumpleaños', label: 'Grupo de niños', h: 300 },
+  { cat: 'Cumpleaños', label: 'Actividad supervisada', h: 360 },
+  
+  // Torneos
+  { cat: 'Torneos', label: 'Competencia en pista', h: 380 },
+  { cat: 'Torneos', label: 'Premiación', h: 300 },
+  { cat: 'Torneos', label: 'Tiradores concentrados', h: 340 },
+  
+  // Instalaciones
+  { cat: 'Instalaciones', label: 'Polígono bajo techo', h: 420 },
+  { cat: 'Instalaciones', label: 'Distancias del rango', h: 300 },
+  { cat: 'Instalaciones', label: 'Área de eventos', h: 380 },
+  { cat: 'Instalaciones', label: 'Zona de comida', h: 300 },
 ] as const;
 
 type Cat = (typeof CATS)[number];

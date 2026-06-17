@@ -91,7 +91,7 @@ export default function Navbar() {
                   >
                     <Link href={it.href} className={isActive(it.href) ? 'active' : ''} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                       {it.label}
-                      <Icon name="arrow" style={{ width: 12, height: 12, transform: 'rotate(90deg)' }} />
+                        <Icon name="chevron" style={{ width: 14, height: 14, transform: 'rotate(90deg)' }} />
                     </Link>
                     <div 
                       className="dropdown-menu"

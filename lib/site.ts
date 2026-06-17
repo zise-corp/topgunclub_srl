@@ -30,7 +30,14 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'Arco y Flecha', href: '/cursos#arco' },
     ]
   },
-  { label: 'Eventos', href: '/eventos' },
+  { 
+    label: 'Eventos', 
+    href: '/eventos',
+    children: [
+      { label: 'Cumpleaños', href: '/eventos#cumpleanos' },
+      { label: 'Torneos', href: '/eventos#torneos' },
+    ]
+  },
   { label: 'Galería', href: '/galeria' },
   { label: 'Contacto', href: '/contacto' },
 ];

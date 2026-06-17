@@ -5,11 +5,11 @@ import Icon from './Icon';
 const FAQS = [
   {
     q: '¿Necesito experiencia previa para empezar?',
-    a: 'No. Tenemos programas desde nivel cero, pensados para quienes nunca tocaron un arma. Nuestros instructores te guían paso a paso en un entorno seguro y controlado.',
+    a: 'No. Tenemos programas desde nivel cero en Armas de Fuego, Airsoft y PCP, pensados para quienes nunca han tocado un arma. Nuestros instructores te guían paso a paso en un entorno seguro y controlado.',
   },
   {
     q: '¿Cuál es el requisito de edad?',
-    a: 'La actividad es para personas mayores de edad. Para casos particulares (menores acompañados o grupos), consultanos por WhatsApp y te indicamos las condiciones.',
+    a: 'La actividad es para personas mayores de edad. Para casos particulares (menores acompañados en cumpleaños infantiles o grupos), consultanos por WhatsApp y te indicamos las condiciones.',
   },
   {
     q: '¿Es seguro? ¿Cómo manejan la seguridad?',
@@ -20,12 +20,20 @@ const FAQS = [
     a: 'Solo tus ganas de aprender. La protección auditiva y visual, así como el equipo necesario, se provee en el polígono. Te recomendamos ropa cómoda y calzado cerrado.',
   },
   {
-    q: '¿Puedo organizar un evento o ir en grupo?',
-    a: 'Claro. Alquilamos el espacio para empresas, cumpleaños, despedidas y team building, con opción de tiro deportivo o airsoft y servicio de comida. Pedí tu cotización por WhatsApp.',
+    q: '¿Puedo organizar un cumpleaños para mi hijo/a?',
+    a: '¡Claro! Ofrecemos paquetes de cumpleaños infantiles con actividades adaptadas (PCP, airsoft suave, arco), supervisadas por instructores certificados. Incluye espacio para celebración y opción de catering. Pedí tu cotización por WhatsApp.',
+  },
+  {
+    q: '¿Cómo funcionan los torneos mensuales?',
+    a: 'Una vez al mes realizamos torneos oficiales exclusivos para alumnos que ya completaron un curso con nosotros. Hay competencias en armas de fuego, airsoft y PCP, con premios y ranking mensual. Escribinos para inscribirte.',
+  },
+  {
+    q: '¿Cuándo inician los cursos de Arco y Flecha?',
+    a: 'El curso de Arco y Flecha está próximamente. Si querés ser de los primeros en enterarte cuando abra la inscripción, escribinos por WhatsApp y te avisamos apenas tengamos fecha.',
   },
   {
     q: '¿Cómo reservo?',
-    a: 'La forma más rápida es por WhatsApp. Escribinos, te asesoramos según lo que buscás y coordinamos día y horario.',
+    a: 'La forma más rápida es por WhatsApp. Escribinos, te asesoramos según lo que buscás (curso, cumpleaños, torneo o práctica libre) y coordinamos día y horario.',
   },
 ] as const;
 
