@@ -31,11 +31,10 @@ export default function Footer() {
           <div>
             <h4>Servicios</h4>
             <ul className="footer__links">
-              <li><Link href="/escuela">Escuela de Tiro</Link></li>
-              <li><Link href="/cursos">Cursos intensivos</Link></li>
-              <li><Link href="/cursos#airsoft">Airsoft</Link></li>
+              <li><Link href="/cursos">Cursos</Link></li>
+              <li><Link href="/cursos#airsoft">Sesiones</Link></li>
               <li><Link href="/eventos">Eventos</Link></li>
-              <li><Link href="/eventos#comida">Servicio de comida</Link></li>
+              <li><Link href="/eventos#comida">Torneos</Link></li>
               <li><Link href="/escuela#poligono">Polígono</Link></li>
             </ul>
           </div>

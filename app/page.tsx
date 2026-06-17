@@ -4,7 +4,6 @@ import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
 import Servicios from '@/components/Servicios';
 import EscuelaTeaser from '@/components/EscuelaTeaser';
-import CursoDestacado from '@/components/CursoDestacado';
 import Testimonios from '@/components/Testimonios';
 import FinalCta from '@/components/FinalCta';
 
@@ -26,7 +25,6 @@ export default function HomePage() {
       <Stats />
       <Servicios />
       <EscuelaTeaser />
-      <CursoDestacado />
       <Testimonios />
       <FinalCta
         title="¿Listo para empezar? Reserva tu cupo hoy"

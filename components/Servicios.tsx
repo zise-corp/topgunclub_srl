@@ -13,45 +13,52 @@ const SERVICES: {
 }[] = [
   {
     icon: 'target',
-    title: 'Escuela de Tiro Deportivo',
+    title: 'Curso de uso y manejo seguro de armas de fuego',
     text: 'Formación segura y progresiva con instructores certificados. De cero a tirador competente bajo la Ley 400.',
-    href: '/escuela',
+    href: '/cursos',
     img: '/assets/piece-escuela.png',
   },
   {
-    icon: 'calendar',
-    title: 'Cursos Intensivos',
-    text: 'Programas estructurados por niveles. Destaca el Curso de 1 semana: de novato a experto.',
-    href: '/cursos',
-    img: '/assets/piece-experto.png',
-  },
-  {
     icon: 'shield',
-    title: 'Entrenamiento Airsoft',
+    title: 'Curso Vacacional de Airsoft',
     text: 'Experiencias y entrenamiento táctico de airsoft para grupos, amigos y equipos. Diversión con disciplina.',
     href: '/cursos#airsoft',
     ph: 'Airsoft táctico',
   },
   {
+    icon: 'target',
+    title: 'Curso Vacacional De PCP',
+    text: 'Programas estructurados por niveles para armas de aire comprimido. Precisión, técnica y seguridad en cada disparo.',
+    href: '/cursos',
+    ph: 'Curso PCP',
+  },
+  {
+    icon: 'star',
+    title: 'Próximamente Curso Vacacional de Arco y Flecha',
+    text: 'Una nueva disciplina que se suma a nuestro club. Precisión, concentración y técnica tradicional. ¡Muy pronto disponible!',
+    href: '/contacto',
+    ph: 'Arco y flecha',
+  },
+  {
+    icon: 'clock',
+    title: 'Sesiones',
+    text: 'Entra a la línea de tiro y siente la adrenalina en su estado más puro. Sesiones guiadas por profesionales, Una experiencia intensa, segura e inolvidable.',
+    href: '/cursos',
+    ph: 'Polígono bajo techo',
+  },
+  {
     icon: 'users',
-    title: 'Alquiler para Eventos',
+    title: 'Alquiler para cumpleaños y eventos especiales',
     text: 'Ambientes amplios para empresas, cumpleaños, despedidas y team building. El lugar perfecto para cualquier evento.',
     href: '/eventos',
     ph: 'Eventos / espacio',
   },
   {
-    icon: 'food',
-    title: 'Servicio de Comida',
-    text: 'Cocina y catering en el club para acompañar tu sesión, evento o jornada de práctica.',
-    href: '/eventos#comida',
-    ph: 'Servicio de comida',
-  },
-  {
-    icon: 'target',
-    title: 'Polígono / Práctica Libre',
-    text: 'Polígono bajo techo con distintas distancias y disciplinas. Práctica libre con equipo de protección.',
-    href: '/escuela#poligono',
-    ph: 'Polígono bajo techo',
+    icon: 'star',
+    title: 'Torneos Multidisciplinarios',
+    text: 'Competencias de tiro deportivo, airsoft y PCP. Demostrá tu nivel y competí con otros tiradores en Cochabamba.',
+    href: '/contacto',
+    ph: 'Torneos',
   },
 ];
 
@@ -65,7 +72,7 @@ export default function Servicios() {
             Un club, <em>muchas</em> formas de vivirlo
           </h2>
           <p className="lead">
-            Tiro deportivo, airsoft, eventos y más — todo en un solo lugar, con la seguridad y el
+            Tiro deportivo con armas de fuego, Airsoft, PCP y más — todo en un solo lugar, con la seguridad y el
             profesionalismo como base de cada experiencia.
           </p>
         </div>

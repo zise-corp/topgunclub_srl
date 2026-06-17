@@ -12,13 +12,25 @@ export function waLink(text?: string): string {
   return `https://api.whatsapp.com/send/?phone=${WA_PHONE}&text=${encodeURIComponent(msg)}&type=phone_number&app_absent=0`;
 }
 
-export const NAV_ITEMS = [
+export type NavItem = {
+  label: string;
+  href: string;
+  children?: { label: string; href: string }[];
+};
+
+export const NAV_ITEMS: NavItem[] = [
   { label: 'Inicio', href: '/' },
-  { label: 'Escuela de Tiro', href: '/escuela' },
-  { label: 'Cursos', href: '/cursos' },
-  { label: 'Airsoft', href: '/cursos#airsoft' },
+  { 
+    label: 'Cursos', 
+    href: '/cursos',
+    children: [
+      { label: 'Armas de Fuego', href: '/cursos#fuego' },
+      { label: 'Airsoft', href: '/cursos#airsoft' },
+      { label: 'PCP', href: '/cursos#pcp' },
+      { label: 'Arco y Flecha', href: '/cursos#arco' },
+    ]
+  },
   { label: 'Eventos', href: '/eventos' },
-  { label: 'Polígono', href: '/escuela#poligono' },
   { label: 'Galería', href: '/galeria' },
   { label: 'Contacto', href: '/contacto' },
-] as const;
+];
