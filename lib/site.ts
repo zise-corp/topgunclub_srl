@@ -38,6 +38,14 @@ export const NAV_ITEMS: NavItem[] = [
       { label: 'Torneos', href: '/eventos#torneos' },
     ]
   },
+  { 
+    label: 'Catálogo', 
+    href: '/catalogo',
+    children: [
+      { label: 'Armas de Fuego', href: '/catalogo#fuego' },
+      { label: 'PCP', href: '/catalogo#pcp' },
+    ]
+  },
   { label: 'Galería', href: '/galeria' },
   { label: 'Contacto', href: '/contacto' },
 ];

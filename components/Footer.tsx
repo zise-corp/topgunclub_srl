@@ -3,15 +3,25 @@ import Image from 'next/image';
 import { NAV_ITEMS, SOCIALS, PHONE_DISPLAY, waLink } from '@/lib/site';
 import Icon from './Icon';
 
+const DISCIPLINAS = [
+  { label: 'Armas de Fuego', href: '/cursos#fuego' },
+  { label: 'Airsoft Táctico', href: '/cursos#airsoft' },
+  { label: 'Tiro con PCP', href: '/cursos#pcp' },
+  { label: 'Arco y Flecha', href: '/cursos#arco' },
+  { label: 'Cumpleaños Infantiles', href: '/eventos#cumpleanos' },
+  { label: 'Torneos Mensuales', href: '/eventos#torneos' },
+];
+
 export default function Footer() {
   return (
     <footer className="footer grain">
       <div className="container">
         <div className="footer__grid">
 
+          {/* Columna 1: Marca */}
           <div className="footer__brand">
             <Image src="/assets/logo-white.png" alt="Top Gun Club SRL" height={54} width={216} style={{ width: 'auto', height: '54px', marginBottom: '18px' }} />
-            <p>Club y escuela de tiro deportivo en Cochabamba, Bolivia. Polígono bajo techo, eventos, airsoft y servicio de comida. El lugar perfecto para cualquier ocasión.</p>
+            <p>Club y escuela de tiro deportivo en Cochabamba, Bolivia. Polígono bajo techo, cursos, airsoft, PCP, eventos y servicio de comida. El lugar perfecto para cualquier ocasión.</p>
             <div className="footer__social">
               <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook"><Icon name="facebook" /></a>
               <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Icon name="instagram" /></a>
@@ -19,26 +29,31 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Columna 2: Navegación */}
           <div>
             <h4>Navegación</h4>
             <ul className="footer__links">
-              {NAV_ITEMS.slice(0, 6).map(it => (
+              {NAV_ITEMS.filter(it => !it.children).map(it => (
+                <li key={it.label}><Link href={it.href}>{it.label}</Link></li>
+              ))}
+              {/* Mostrar también los padres con hijos (Cursos, Eventos, Catálogo) */}
+              {NAV_ITEMS.filter(it => it.children).map(it => (
                 <li key={it.label}><Link href={it.href}>{it.label}</Link></li>
               ))}
             </ul>
           </div>
 
+          {/* Columna 3: Disciplinas y Experiencias */}
           <div>
-            <h4>Servicios</h4>
+            <h4>Disciplinas</h4>
             <ul className="footer__links">
-              <li><Link href="/cursos">Cursos</Link></li>
-              <li><Link href="/cursos#airsoft">Sesiones</Link></li>
-              <li><Link href="/eventos">Eventos</Link></li>
-              <li><Link href="/eventos#comida">Torneos</Link></li>
-              <li><Link href="/escuela#poligono">Polígono</Link></li>
+              {DISCIPLINAS.map(d => (
+                <li key={d.label}><Link href={d.href}>{d.label}</Link></li>
+              ))}
             </ul>
           </div>
 
+          {/* Columna 4: Contacto */}
           <div>
             <h4>Contacto</h4>
             <ul className="footer__links">
@@ -51,10 +66,15 @@ export default function Footer() {
               <li>
                 <Link href="/contacto">
                   <Icon name="pin" style={{ width: 15, height: 15, verticalAlign: '-2px', marginRight: 6 }} />
-                  Cochabamba, Bolivia
+                  Av. Francisco Bedregal, Zona Temporal
                 </Link>
               </li>
-              <li style={{ color: 'var(--faint)', fontSize: '.92rem', marginTop: 8 }}>Lun – Dom · Horarios en contacto</li>
+              <li>
+                <Link href="/contacto">
+                  <Icon name="clock" style={{ width: 15, height: 15, verticalAlign: '-2px', marginRight: 6 }} />
+                  Lun – Dom · Consultá horarios
+                </Link>
+              </li>
             </ul>
             <Link href="/contacto" className="btn btn--ghost" style={{ marginTop: 16 }}>
               Ver contacto <Icon name="arrow" />

@@ -143,7 +143,7 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      {/* Mapa */}
+      {/* Mapa + Dirección */}
       <section className="section--tight" style={{ paddingTop: 'clamp(40px,5vw,72px)' }}>
         <div className="container">
           <div
@@ -159,18 +159,27 @@ export default function ContactoPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <span className="pill" style={{ position: 'absolute', top: 16, left: 16, background: 'rgba(8,8,8,.85)' }}>
-              <span className="dot" /> Top Gun Club SRL · Cochabamba, Bolivia
-            </span>
-            <a
-              href="https://g.page/r/CRunhge8dwfZEBA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pill"
-              style={{ position: 'absolute', top: 16, right: 16, background: 'rgba(8,8,8,.85)', cursor: 'pointer' }}
-            >
-              Abrir en Google Maps →
-            </a>
+          </div>
+
+          {/* Dirección debajo del mapa */}
+          <div
+            className="reveal"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              marginTop: '18px',
+              padding: '14px 18px',
+              background: 'rgba(255,255,255,0.03)',
+              border: '1px solid var(--line)',
+              borderRadius: 'var(--r)',
+              maxWidth: '640px'
+            }}
+          >
+            <Icon name="pin" style={{ width: 20, height: 20, color: 'var(--green-bright)', flexShrink: 0 }} />
+            <p style={{ margin: 0, fontSize: '0.95rem', color: 'var(--faint)', lineHeight: 1.5 }}>
+              <strong style={{ color: '#fff' }}>Dirección:</strong> Avenida Francisco Bedregal entre Lope de Vega y Mostajo. Zona Temporal.
+            </p>
           </div>
         </div>
       </section>
