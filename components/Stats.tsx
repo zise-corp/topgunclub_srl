@@ -1,10 +1,10 @@
 import Counter from './Counter';
 
 const STATS = [
-  { num: <><Counter to={8} /><em>+</em></>, label: 'Años formando tiradores' },
-  { num: <><Counter to={1200} /><em>+</em></>, label: 'Alumnos entrenados' },
-  { num: <><Counter to={3900} /><em>+</em></>, label: 'Seguidores en redes' },
-  { num: <Counter to={6} />, label: 'Calibres disponibles' },
+  { num: <><Counter to={3} /><em>+</em></>, label: 'Años formando tiradores' },
+  { num: <><Counter to={200} /><em>+</em></>, label: 'Alumnos entrenados' },
+  { num: <><Counter to={25000} /><em>+</em></>, label: 'Seguidores en redes' },
+  { num: <Counter to={4} />, label: 'Disciplinas disponibles' },
 ];
 
 export default function Stats() {
