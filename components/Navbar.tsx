@@ -51,17 +51,13 @@ export default function Navbar() {
         <div className="container">
           <Link className="nav__brand" href="/" aria-label="Top Gun Club inicio">
             <Image
-              src="/assets/logo-white.png"
+              src="https://res.cloudinary.com/dj5yikcc4/image/upload/v1781744683/Logo_cdzhn9.png"
               alt="Top Gun Club"
-              height={42}
-              width={170}
-              style={{ width: 'auto', height: '42px' }}
+              height={85}
+              width={340}
+              style={{ width: 'auto', height: '85px' }}
               priority
             />
-            <span style={{ lineHeight: 1 }}>
-              <b>Top Gun</b>
-              <span>Club SRL</span>
-            </span>
           </Link>
 
           <div className="nav__links">

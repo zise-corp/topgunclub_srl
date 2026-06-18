@@ -45,7 +45,16 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  icons: { icon: '/assets/logo.png' },
+  icons: {
+    icon: {
+      url: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781744683/Logo_cdzhn9.png',
+      type: 'image/png',
+    },
+    apple: {
+      url: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781744683/Logo_cdzhn9.png',
+      type: 'image/png',
+    },
+  },
   openGraph: {
     locale: 'es_BO',
     type: 'website',
