@@ -147,47 +147,11 @@ export default function EventosPage() {
             <h2 className="section-title">Así se <em>vive</em> el club</h2>
           </div>
           <div className="grid cols-3 reveal" data-d="2">
-            {['Celebración de cumpleaños', 'Premiación torneo', 'Zona de comida', 'Competencia en pista', 'Grupo de niños', 'Ambiente del club'].map((l, i) => (
+            {['Celebración de cumpleaños', 'Premiación torneo', 'Zona de celebración', 'Competencia en pista', 'Grupo de niños', 'Ambiente del club'].map((l, i) => (
               <div className="card" key={i} style={{ aspectRatio: '4/3', overflow: 'hidden', position: 'relative' }}>
                 <Ph label={l} style={{ position: 'absolute', inset: 0 }} />
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Servicio de comida */}
-      <section
-        id="comida"
-        className="section section--tight"
-        style={{ background: 'linear-gradient(180deg,var(--bg),#0d0f0e)', borderTop: '1px solid var(--line)', scrollMarginTop: '90px' }}
-      >
-        <div className="container">
-          <div className="split split--rev">
-            <div className="split__media reveal" data-d="2">
-              <Ph label="Servicio de comida / cocina" />
-            </div>
-            <div className="reveal">
-              <span className="eyebrow">Servicio de comida</span>
-              <h2 className="section-title" style={{ margin: '14px 0 18px' }}>
-                Buena comida, <em>mejor</em> experiencia
-              </h2>
-              <p className="lead">
-                Acompañá tu cumpleaños, torneo o jornada con nuestro servicio de comida. Desde un snack 
-                entre prácticas hasta el catering completo de tu celebración, lo coordinamos para que 
-                solo te preocupes por disfrutar.
-              </p>
-              <div style={{ display: 'flex', gap: 12, marginTop: 26, flexWrap: 'wrap' }}>
-                <a
-                  href={waLink('Hola! Quiero info sobre el servicio de comida para mi evento')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn--wa"
-                >
-                  <Icon name="whatsapp" /> Consultar menú
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </section>

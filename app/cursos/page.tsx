@@ -3,7 +3,7 @@ import RevealObserver from '@/components/RevealObserver';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
 import Icon, { type IconName } from '@/components/Icon';
-import Ph from '@/components/Ph';
+import ImageCarousel from '@/components/ImageCarousel';
 import { waLink } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -11,6 +11,79 @@ export const metadata: Metadata = {
   description:
     'Cursos de tiro deportivo de Top Gun Club: Armas de fuego, Airsoft, PCP y próximamente Arco y Flecha en Cochabamba. Formación segura bajo la Ley 400.',
 };
+
+type Curso = {
+  id: string;
+  title: string;
+  eyebrow: string;
+  icon: IconName;
+  desc: string;
+  feats: string[];
+  ctaMsg: string;
+  ctaText: string;
+  comingSoon?: boolean;
+  images: string[];
+};
+
+const CURSOS: Curso[] = [
+  {
+    id: 'fuego',
+    title: 'Formación en armas de fuego',
+    eyebrow: 'Armas de Fuego',
+    icon: 'target',
+    desc: 'Formación completa en manejo, técnica de disparo y seguridad. Nuestro enfoque es 100% deportivo y formativo, cumpliendo estrictamente la Ley 400. Ideal tanto para quienes nunca han tocado un arma como para tiradores que buscan perfeccionar su técnica.',
+    feats: ['Protocolo de seguridad estricto', 'Instructores certificados', 'Equipo de protección auditiva y visual', 'Progresión de novato a experto'],
+    ctaMsg: 'Hola! Quiero información sobre el curso de Armas de Fuego',
+    ctaText: 'Reservar curso',
+    images: [
+      'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811129/Fuego_uyzbo5.png',
+      'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811124/Fuego2_a95akj.png',
+    ],
+  },
+  {
+    id: 'airsoft',
+    title: 'Experiencia airsoft',
+    eyebrow: 'Airsoft Táctico',
+    icon: 'shield',
+    desc: 'Vive la adrenalina del airsoft en un entorno seguro, organizado y con supervisión profesional. Perfecto para trabajo en equipo, estrategia, despedidas, cumpleaños y team building empresarial. Pura diversión con disciplina.',
+    feats: ['Escenarios y dinámicas para grupos', 'Briefing y reglas de seguridad previas', 'Equipamiento y protección disponible', 'Para principiantes y jugadores con experiencia'],
+    ctaMsg: 'Hola! Quiero información sobre el curso o experiencia de Airsoft',
+    ctaText: 'Reservar Airsoft',
+    images: [
+      'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811126/Airsoft_fuffew.png',
+      'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811126/Airsoft2_l5itfo.png',
+    ],
+  },
+  {
+    id: 'pcp',
+    title: 'Precisión con aire comprimido',
+    eyebrow: 'Tiro con PCP',
+    icon: 'star',
+    desc: 'El tiro con armas de aire comprimido (PCP) es una disciplina de alta precisión, similar al tiro olímpico. Es silencioso, técnico y excelente para desarrollar concentración, postura y control. Ideal para todas las edades.',
+    feats: ['Enfoque en precisión y técnica', 'Menor ruido y retroceso', 'Ideal para iniciación y competición', 'Supervisión constante de postura'],
+    ctaMsg: 'Hola! Quiero información sobre el curso de tiro con PCP',
+    ctaText: 'Reservar curso PCP',
+    images: [
+      'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811127/PCP_mv46rn.png',
+      'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811128/PCP2_zt6iey.png',
+    ],
+  },
+  {
+    id: 'arco',
+    title: 'Próximamente arco y flecha',
+    eyebrow: 'Arco y Flecha',
+    icon: 'target',
+    desc: 'Una nueva disciplina que se suma a nuestro club. El tiro con arco desarrolla concentración, fuerza, técnica tradicional y control mental. Una experiencia única y diferente para toda la familia.',
+    feats: ['Técnica tradicional y moderna', 'Desarrollo de concentración', 'Actividad apta para toda la familia', 'Instructores especializados'],
+    ctaMsg: 'Hola! Quiero saber cuándo inician los cursos de Arco y Flecha',
+    ctaText: 'Avísame cuando inicie',
+    comingSoon: true,
+    images: [
+      'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811127/Arco1_dkyqge.png',
+      'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811125/Arco2_pwl2u0.png',
+    ],
+  },
+];
 
 export default function CursosPage() {
   return (
@@ -27,26 +100,27 @@ export default function CursosPage() {
       <section id="fuego" className="section grain" style={{ scrollMarginTop: '100px' }}>
         <div className="container">
           <div className="split" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1" style={{ position: 'relative', aspectRatio: '4/3', borderRadius: 'var(--r)', overflow: 'hidden' }}>
-              <Ph label="Tiro con armas de fuego" style={{ position: 'absolute', inset: 0 }} />
+            <div className="split__media reveal" data-d="1">
+              <ImageCarousel images={CURSOS[0].images} />
             </div>
             <div className="reveal" data-d="2">
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                 <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Icon name="target" style={{ width: 22, height: 22 }} />
                 </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Armas de Fuego</span>
+                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '1rem' }}>{CURSOS[0].eyebrow}</span>
               </div>
-              <p className="lead" style={{ marginBottom: '24px' }}>
-                Formación completa en manejo, técnica de disparo y seguridad. Nuestro enfoque es 100% deportivo y formativo, cumpliendo estrictamente la Ley 400. Ideal tanto para quienes nunca han tocado un arma como para tiradores que buscan perfeccionar su técnica.
-              </p>
+              <h2 className="section-title" style={{ fontSize: '2.8rem', margin: '14px 0 24px', lineHeight: 1.1 }}>
+                {CURSOS[0].title.split(' ').slice(0, -2).join(' ')} <em>{CURSOS[0].title.split(' ').slice(-2).join(' ')}</em>
+              </h2>
+              <p className="lead" style={{ marginBottom: '24px' }}>{CURSOS[0].desc}</p>
               <ul className="checks" style={{ marginBottom: '32px' }}>
-                {['Protocolo de seguridad estricto', 'Instructores certificados', 'Equipo de protección auditiva y visual', 'Progresión de novato a experto'].map((feat, idx) => (
+                {CURSOS[0].feats.map((feat, idx) => (
                   <li key={idx}><span className="ck"><Icon name="check" /></span><span>{feat}</span></li>
                 ))}
               </ul>
-              <a href={waLink('Hola! Quiero información sobre el curso de Armas de Fuego')} target="_blank" rel="noopener noreferrer" className="btn btn--wa btn--lg">
-                <Icon name="whatsapp" /> Reservar curso
+              <a href={waLink(CURSOS[0].ctaMsg)} target="_blank" rel="noopener noreferrer" className="btn btn--wa btn--lg">
+                <Icon name="whatsapp" /> {CURSOS[0].ctaText}
               </a>
             </div>
           </div>
@@ -57,27 +131,28 @@ export default function CursosPage() {
       <section id="airsoft" className="section section--tight" style={{ background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', scrollMarginTop: '100px' }}>
         <div className="container">
           <div className="split split--rev" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1" style={{ position: 'relative', aspectRatio: '4/3', borderRadius: 'var(--r)', overflow: 'hidden' }}>
-              <Ph label="Entrenamiento Airsoft" style={{ position: 'absolute', inset: 0 }} />
-            </div>
             <div className="reveal" data-d="2">
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                 <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Icon name="shield" style={{ width: 22, height: 22 }} />
                 </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Airsoft Táctico</span>
+                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '1rem' }}>{CURSOS[1].eyebrow}</span>
               </div>
-              <p className="lead" style={{ marginBottom: '24px' }}>
-                Vive la adrenalina del airsoft en un entorno seguro, organizado y con supervisión profesional. Perfecto para trabajo en equipo, estrategia, despedidas, cumpleaños y team building empresarial. Pura diversión con disciplina.
-              </p>
+              <h2 className="section-title" style={{ fontSize: '2.8rem', margin: '14px 0 24px', lineHeight: 1.1 }}>
+                {CURSOS[1].title.split(' ').slice(0, -1).join(' ')} <em>{CURSOS[1].title.split(' ').slice(-1).join(' ')}</em>
+              </h2>
+              <p className="lead" style={{ marginBottom: '24px' }}>{CURSOS[1].desc}</p>
               <ul className="checks" style={{ marginBottom: '32px' }}>
-                {['Escenarios y dinámicas para grupos', 'Briefing y reglas de seguridad previas', 'Equipamiento y protección disponible', 'Para principiantes y jugadores con experiencia'].map((feat, idx) => (
+                {CURSOS[1].feats.map((feat, idx) => (
                   <li key={idx}><span className="ck"><Icon name="check" /></span><span>{feat}</span></li>
                 ))}
               </ul>
-              <a href={waLink('Hola! Quiero información sobre el curso o experiencia de Airsoft')} target="_blank" rel="noopener noreferrer" className="btn btn--wa btn--lg">
-                <Icon name="whatsapp" /> Reservar Airsoft
+              <a href={waLink(CURSOS[1].ctaMsg)} target="_blank" rel="noopener noreferrer" className="btn btn--wa btn--lg">
+                <Icon name="whatsapp" /> {CURSOS[1].ctaText}
               </a>
+            </div>
+            <div className="split__media reveal" data-d="1">
+              <ImageCarousel images={CURSOS[1].images} />
             </div>
           </div>
         </div>
@@ -87,26 +162,27 @@ export default function CursosPage() {
       <section id="pcp" className="section grain" style={{ scrollMarginTop: '100px' }}>
         <div className="container">
           <div className="split" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1" style={{ position: 'relative', aspectRatio: '4/3', borderRadius: 'var(--r)', overflow: 'hidden' }}>
-              <Ph label="Tiro de precisión PCP" style={{ position: 'absolute', inset: 0 }} />
+            <div className="split__media reveal" data-d="1">
+              <ImageCarousel images={CURSOS[2].images} />
             </div>
             <div className="reveal" data-d="2">
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                 <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Icon name="star" style={{ width: 22, height: 22 }} />
                 </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tiro con PCP</span>
+                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '1rem' }}>{CURSOS[2].eyebrow}</span>
               </div>
-              <p className="lead" style={{ marginBottom: '24px' }}>
-                El tiro con armas de aire comprimido (PCP) es una disciplina de alta precisión, similar al tiro olímpico. Es silencioso, técnico y excelente para desarrollar concentración, postura y control. Ideal para todas las edades.
-              </p>
+              <h2 className="section-title" style={{ fontSize: '2.8rem', margin: '14px 0 24px', lineHeight: 1.1 }}>
+                {CURSOS[2].title.split(' ').slice(0, -2).join(' ')} <em>{CURSOS[2].title.split(' ').slice(-2).join(' ')}</em>
+              </h2>
+              <p className="lead" style={{ marginBottom: '24px' }}>{CURSOS[2].desc}</p>
               <ul className="checks" style={{ marginBottom: '32px' }}>
-                {['Enfoque en precisión y técnica', 'Menor ruido y retroceso', 'Ideal para iniciación y competición', 'Supervisión constante de postura'].map((feat, idx) => (
+                {CURSOS[2].feats.map((feat, idx) => (
                   <li key={idx}><span className="ck"><Icon name="check" /></span><span>{feat}</span></li>
                 ))}
               </ul>
-              <a href={waLink('Hola! Quiero información sobre el curso de tiro con PCP')} target="_blank" rel="noopener noreferrer" className="btn btn--wa btn--lg">
-                <Icon name="whatsapp" /> Reservar curso PCP
+              <a href={waLink(CURSOS[2].ctaMsg)} target="_blank" rel="noopener noreferrer" className="btn btn--wa btn--lg">
+                <Icon name="whatsapp" /> {CURSOS[2].ctaText}
               </a>
             </div>
           </div>
@@ -117,30 +193,28 @@ export default function CursosPage() {
       <section id="arco" className="section section--tight" style={{ background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', opacity: 0.85, scrollMarginTop: '100px' }}>
         <div className="container">
           <div className="split split--rev" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1" style={{ position: 'relative', aspectRatio: '4/3', borderRadius: 'var(--r)', overflow: 'hidden', border: '1px dashed var(--line)' }}>
-              <span className="pill" style={{ position: 'absolute', top: 16, left: 16, background: 'rgba(8,8,8,.85)', zIndex: 2 }}>
-                <Icon name="clock" style={{ width: 16, height: 16, marginRight: 6 }} /> Próximamente
-              </span>
-              <Ph label="Próximamente: Arco y Flecha" style={{ position: 'absolute', inset: 0 }} />
-            </div>
             <div className="reveal" data-d="2">
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
                 <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <Icon name="target" style={{ width: 22, height: 22 }} />
                 </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Arco y Flecha</span>
+                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '1rem' }}>{CURSOS[3].eyebrow}</span>
               </div>
-              <p className="lead" style={{ marginBottom: '24px' }}>
-                Una nueva disciplina que se suma a nuestro club. El tiro con arco desarrolla concentración, fuerza, técnica tradicional y control mental. Una experiencia única y diferente para toda la familia.
-              </p>
+              <h2 className="section-title" style={{ fontSize: '2.8rem', margin: '14px 0 24px', lineHeight: 1.1 }}>
+                {CURSOS[3].title.split(' ').slice(0, -2).join(' ')} <em>{CURSOS[3].title.split(' ').slice(-2).join(' ')}</em>
+              </h2>
+              <p className="lead" style={{ marginBottom: '24px' }}>{CURSOS[3].desc}</p>
               <ul className="checks" style={{ marginBottom: '32px' }}>
-                {['Técnica tradicional y moderna', 'Desarrollo de concentración', 'Actividad apta para toda la familia', 'Instructores especializados'].map((feat, idx) => (
+                {CURSOS[3].feats.map((feat, idx) => (
                   <li key={idx}><span className="ck"><Icon name="check" /></span><span>{feat}</span></li>
                 ))}
               </ul>
               <span className="btn btn--ghost btn--lg" style={{ cursor: 'not-allowed', opacity: 0.7, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                <Icon name="clock" style={{ width: 20, height: 20 }} /> Avísame cuando inicie
+                <Icon name="clock" style={{ width: 20, height: 20 }} /> {CURSOS[3].ctaText}
               </span>
+            </div>
+            <div className="split__media reveal" data-d="1">
+              <ImageCarousel images={CURSOS[3].images} comingSoon />
             </div>
           </div>
         </div>

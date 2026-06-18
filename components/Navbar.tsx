@@ -53,9 +53,9 @@ export default function Navbar() {
             <Image
               src="https://res.cloudinary.com/dj5yikcc4/image/upload/v1781744683/Logo_cdzhn9.png"
               alt="Top Gun Club"
-              height={85}
-              width={340}
-              style={{ width: 'auto', height: '85px' }}
+              height={65}
+              width={260}
+              style={{ width: 'auto', height: '65px' }}
               priority
             />
           </Link>
@@ -87,7 +87,7 @@ export default function Navbar() {
                   >
                     <Link href={it.href} className={isActive(it.href) ? 'active' : ''} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                       {it.label}
-                        <Icon name="chevron" style={{ width: 14, height: 14, transform: 'rotate(90deg)' }} />
+                      <Icon name="chevron" style={{ width: 14, height: 14 }} />
                     </Link>
                     <div 
                       className="dropdown-menu"
