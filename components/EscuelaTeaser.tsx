@@ -18,7 +18,7 @@ export default function EscuelaTeaser() {
         <div className="split">
           <div className="split__media reveal" style={{ position: 'relative' }}>
             <Image
-              src="/assets/piece-escuela.png"
+              src="https://res.cloudinary.com/dj5yikcc4/image/upload/v1781748380/Seguridad_a7uw6g.png"
               alt="Polígono de tiro bajo techo de Top Gun Club"
               fill
               style={{ objectFit: 'cover' }}
