@@ -9,10 +9,14 @@ import Icon from './Icon';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [hash, setHash] = useState(() =>
-    typeof window !== 'undefined' ? window.location.hash : ''
-  );
+  // ✅ Always start empty — read real hash only after mount (client-only)
+  const [hash, setHash] = useState('');
   const pathname = usePathname();
+
+  // Sync hash on mount and on pathname change
+  useEffect(() => {
+    setHash(window.location.hash);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -27,7 +31,6 @@ export default function Navbar() {
   }, [open]);
 
   useEffect(() => {
-    setHash(window.location.hash);
     setOpen(false);
   }, [pathname]);
 
@@ -64,8 +67,8 @@ export default function Navbar() {
             {NAV_ITEMS.map(it => {
               if (it.children) {
                 return (
-                  <div 
-                    key={it.label} 
+                  <div
+                    key={it.label}
                     className="nav__dropdown"
                     style={{ position: 'relative' }}
                     onMouseEnter={(e) => {
@@ -89,7 +92,7 @@ export default function Navbar() {
                       {it.label}
                       <Icon name="chevron" style={{ width: 14, height: 14 }} />
                     </Link>
-                    <div 
+                    <div
                       className="dropdown-menu"
                       style={{
                         position: 'absolute',
@@ -110,13 +113,13 @@ export default function Navbar() {
                       }}
                     >
                       {it.children.map(child => (
-                        <Link 
-                          key={child.label} 
-                          href={child.href} 
+                        <Link
+                          key={child.label}
+                          href={child.href}
                           className={isActive(child.href) ? 'active' : ''}
-                          style={{ 
-                            display: 'block', 
-                            padding: '10px 20px', 
+                          style={{
+                            display: 'block',
+                            padding: '10px 20px',
                             fontSize: '0.9rem',
                             color: 'var(--faint, #aaa)',
                             textDecoration: 'none',
