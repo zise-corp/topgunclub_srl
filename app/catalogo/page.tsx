@@ -18,8 +18,8 @@ const FIREARMS = [
   {
     category: 'Pistolas',
     items: [
-      { name: 'Phoenix Arms HP22A', brand: 'PHOENIXARMS', price: 805, image: 'catalogo/fuego/phoenix-hp22a', specs: { caliber: '.22 LR', type: 'Semiautomática' } },
-      { name: 'Sarsilmaz B6C9', brand: 'SARSILMAZ', price: 1350, image: 'catalogo/fuego/sarsilmaz-b6c9', specs: { caliber: '9mm', type: 'Semiautomática' } },
+      { name: 'Phoenix HP22A', brand: 'PHOENIXARMS', price: 805, image: 'catalogo/fuego/phoenix-hp22a', specs: { caliber: '.22 LR', type: 'Semiautomática' } },
+      { name: 'Sarsilmaz B6C', brand: 'SARSILMAZ', price: 1350, image: 'catalogo/fuego/sarsilmaz-b6c9', specs: { caliber: '9mm', type: 'Semiautomática' } },
       { name: 'Walther P22Q', brand: 'WALTHER', price: 1945, image: 'catalogo/fuego/walther-p22q', specs: { caliber: '.22 LR', type: 'Semiautomática' } },
       { name: 'Smith & Wesson M&P Compact', brand: 'SMITH & WESSON', price: 1945, image: 'catalogo/fuego/sw-mp-compact', specs: { caliber: '9mm', type: 'Compacta' } },
       { name: 'Ruger M&P Compact', brand: 'RUGER', price: 1945, image: 'catalogo/fuego/ruger-mp-compact', specs: { caliber: '9mm', type: 'Compacta' } },
@@ -29,26 +29,28 @@ const FIREARMS = [
   {
     category: 'Rifles',
     items: [
-      { name: 'Rossi Gallery BK', brand: 'ROSSI', price: 910, image: 'catalogo/fuego/rossi-gallery-bk', specs: { caliber: '.22 LR', type: 'Corredera' } },
-      { name: 'Rossi Gallery Wood', brand: 'ROSSI', price: 990, image: 'catalogo/fuego/rossi-gallery-wood', specs: { caliber: '.22 LR', type: 'Corredera' } },
-      { name: 'Rossi Rio Bravo', brand: 'ROSSI', price: 1155, image: 'catalogo/fuego/rossi-rio-bravo', specs: { caliber: '.22 LR', type: 'Palanca' } },
-      { name: 'Rossi Rio Bravo Gold', brand: 'ROSSI', price: 1355, image: 'catalogo/fuego/rossi-rio-bravo-gold', specs: { caliber: '.22 LR', type: 'Palanca' } },
+      { name: 'Rossi 7022', brand: 'ROSSI', price: 730, image: 'catalogo/fuego/rossi-7022', specs: { caliber: '.22 LR', type: 'Semiautomática' } },
+      { name: 'Rossi Gallery BK', brand: 'ROSSI', price: 1045, image: 'catalogo/fuego/rossi-gallery-bk', specs: { caliber: '.22 LR', type: 'Corredera' } },
+      { name: 'Rossi Gallery Wood', brand: 'ROSSI', price: 1155, image: 'catalogo/fuego/rossi-gallery-wood', specs: { caliber: '.22 LR', type: 'Corredera' } },
+      { name: 'Rossi Rio Bravo', brand: 'ROSSI', price: 1355, image: 'catalogo/fuego/rossi-rio-bravo', specs: { caliber: '.22 LR', type: 'Palanca' } },
+      { name: 'Rossi Goldgloss', brand: 'ROSSI', price: 1555, image: 'catalogo/fuego/rossi-goldgloss', specs: { caliber: '.22 LR', type: 'Palanca' } },
       { name: 'Rossi Rio Bravo Gold Mate', brand: 'ROSSI', price: 1555, image: 'catalogo/fuego/rossi-rio-bravo-gold-mate', specs: { caliber: '.22 LR', type: 'Palanca' } },
-      { name: 'Mendoza Squad', brand: 'MENDOZA', price: 1015, image: 'catalogo/fuego/mendoza-squad', specs: { type: 'Varilla', model: '1911' } },
+      { name: 'Mendoza Puma (Squad)', brand: 'MENDOZA', price: 1015, image: 'catalogo/fuego/mendoza-squad', specs: { type: 'Varilla', model: '1911' } },
+      { name: 'Winchester Wildcat', brand: 'WINCHESTER', price: 1345, image: 'catalogo/fuego/winchester-wildcat', specs: { caliber: '.22 LR' } },
       { name: 'Kriss DMK22C FDE', brand: 'KRISS USA', price: 2640, image: 'catalogo/fuego/kriss-dmk22c-fde', specs: { caliber: '.22 LR' } },
       { name: 'Kriss DMK22C BK', brand: 'KRISS USA', price: 2420, image: 'catalogo/fuego/kriss-dmk22c-bk', specs: { caliber: '.22 LR' } },
-      { name: 'CZ Training', brand: 'CZ', price: 2640, image: 'catalogo/fuego/cz-training', specs: { caliber: '.22 LR' } },
+      { name: 'CZ 457 Training', brand: 'CZ', price: 2640, image: 'catalogo/fuego/cz-training', specs: { caliber: '.22 LR' } },
     ]
   },
   {
     category: 'Escopetas',
     items: [
-      { name: 'Boito Miuras SB', brand: 'BOITO', price: 630, image: 'catalogo/fuego/boito-miuras-sb', specs: { caliber: '12', type: '2 tiros' } },
+      { name: 'Boito Reunas SB', brand: 'BOITO', price: 630, image: 'catalogo/fuego/boito-reunas-sb', specs: { caliber: '12', type: '2 tiros' } },
       { name: 'Boito Miura Supreme', brand: 'BOITO', price: 1540, image: 'catalogo/fuego/boito-miura-supreme', specs: { caliber: '12' } },
       { name: 'Boito Miura Special', brand: 'BOITO', price: 1400, image: 'catalogo/fuego/boito-miura-special', specs: { caliber: '12' } },
       { name: 'Uzkon T17/T16', brand: 'UZKON', price: 715, image: 'catalogo/fuego/uzkon-t17', specs: { caliber: '12' } },
       { name: 'Taurus ST12', brand: 'TAURUS', price: 1320, image: 'catalogo/fuego/taurus-st12', specs: { caliber: '12' } },
-      { name: 'Hatsan Escort AS9', brand: 'HATSAN', price: 1045, image: 'catalogo/fuego/hatsan-escort-as9', specs: { caliber: '12' } },
+      { name: 'Hatsan Escort AS', brand: 'HATSAN', price: 1045, image: 'catalogo/fuego/hatsan-escort-as9', specs: { caliber: '12' } },
       { name: 'Hatsan Escort Luxano', brand: 'HATSAN', price: 1540, image: 'catalogo/fuego/hatsan-escort-luxano', specs: { caliber: '12' } },
       { name: 'Hatsan Escort Supreme', brand: 'HATSAN', price: 1320, image: 'catalogo/fuego/hatsan-escort-supreme', specs: { caliber: '12' } },
       { name: 'Hatsan Escort Supreme Max', brand: 'HATSAN', price: 1485, image: 'catalogo/fuego/hatsan-escort-supreme-max', specs: { caliber: '12' } },

@@ -45,7 +45,7 @@ const CURSOS: Curso[] = [
     title: 'Experiencia airsoft',
     eyebrow: 'Airsoft Táctico',
     icon: 'shield',
-    desc: 'Vive la adrenalina del airsoft en un entorno seguro, organizado y con supervisión profesional. Perfecto para trabajo en equipo, estrategia, despedidas, cumpleaños y team building empresarial. Pura diversión con disciplina.',
+    desc: 'Deporte de estrategia y simulación militar en el que los participantes utilizan réplicas exactas de armas de fuego para enfrentarse en escenarios tácticos. Vive la adrenalina del airsoft en un entorno seguro, organizado y con supervisión profesional. Perfecto para trabajo en equipo, estrategia, despedidas, cumpleaños y team building empresarial. Pura diversión con disciplina.',
     feats: ['Escenarios y dinámicas para grupos', 'Briefing y reglas de seguridad previas', 'Equipamiento y protección disponible', 'Para principiantes y jugadores con experiencia'],
     ctaMsg: 'Hola! Quiero información sobre el curso o experiencia de Airsoft',
     ctaText: 'Reservar Airsoft',
