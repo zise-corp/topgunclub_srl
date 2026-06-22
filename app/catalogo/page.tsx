@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import RevealObserver from '@/components/RevealObserver';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
-import Icon from '@/components/Icon';
 import { waLink } from '@/lib/site';
 import { getCloudinaryImage } from '@/lib/cloudinary';
-import ReactCountryFlag from 'react-country-flag';
+import ProductCard from '@/components/ProductCard';
 
 export const metadata: Metadata = {
   title: 'Catálogo de Armas · Top Gun Club SRL',
@@ -47,31 +45,31 @@ const FIREARMS = [
   {
     category: 'Rifles',
     items: [
-      { name: 'Rossi 7022',             brand: 'ROSSI',          price: 730,  image: 'catalogo/fuego/rossi-7022',             specs: { Calibre: '.22 LR', Tipo: 'Semiautomática' } },
-      { name: 'Rossi Gallery BK',       brand: 'ROSSI',          price: 1045, image: 'catalogo/fuego/rossi-gallery-bk',       specs: { Calibre: '.22 LR', Tipo: 'Corredera' } },
-      { name: 'Rossi Gallery Wood',     brand: 'ROSSI',          price: 1155, image: 'catalogo/fuego/rossi-gallery-wood',     specs: { Calibre: '.22 LR', Tipo: 'Corredera' } },
-      { name: 'Rossi Rio Bravo',        brand: 'ROSSI',          price: 1355, image: 'catalogo/fuego/rossi-rio-bravo',        specs: { Calibre: '.22 LR', Tipo: 'Palanca' } },
-      { name: 'Rossi Goldgloss',        brand: 'ROSSI',          price: 1555, image: 'catalogo/fuego/rossi-goldgloss',        specs: { Calibre: '.22 LR', Tipo: 'Palanca' } },
-      { name: 'Rossi Rio Bravo Gold Mate', brand: 'ROSSI',       price: 1555, image: 'catalogo/fuego/rossi-rio-bravo-gold-mate', specs: { Calibre: '.22 LR', Tipo: 'Palanca' } },
-      { name: 'Mendoza Puma (Squad)',   brand: 'MENDOZA',        price: 1015, image: 'catalogo/fuego/mendoza-squad',          specs: { Tipo: 'Varilla',   Modelo: '1911' } },
-      { name: 'Winchester Wildcat',     brand: 'WINCHESTER',     price: 1345, image: 'catalogo/fuego/winchester-wildcat',     specs: { Calibre: '.22 LR' } },
-      { name: 'Kriss DMK22C FDE',       brand: 'KRISS USA',      price: 2640, image: 'catalogo/fuego/kriss-dmk22c-fde',      specs: { Calibre: '.22 LR' } },
-      { name: 'Kriss DMK22C BK',        brand: 'KRISS USA',      price: 2420, image: 'catalogo/fuego/kriss-dmk22c-bk',       specs: { Calibre: '.22 LR' } },
-      { name: 'CZ 457 Training',        brand: 'CZ',             price: 2640, image: 'catalogo/fuego/cz-training',           specs: { Calibre: '.22 LR' } },
+      { name: 'Rossi 7022',             brand: 'ROSSI',          price: 730,  image: 'ROSSI_7022_tkxl7x',              specs: { Calibre: '.22 LR', Tipo: 'Semiautomática' } },
+      { name: 'Rossi Gallery BK',       brand: 'ROSSI',          price: 1045, image: 'ROSSI_GALLERY_BK_dg6prc',        specs: { Calibre: '.22 LR', Tipo: 'Corredera' } },
+      { name: 'Rossi Gallery Wood',     brand: 'ROSSI',          price: 1155, image: 'ROSSI_GALLERY_WOOD_nvfwgg',      specs: { Calibre: '.22 LR', Tipo: 'Corredera' } },
+      { name: 'Rossi Rio Bravo',        brand: 'ROSSI',          price: 1355, image: 'ROSSI_RIO_BRAVO_rs5zrm',         specs: { Calibre: '.22 LR', Tipo: 'Palanca' } },
+      { name: 'Rossi Goldgloss',        brand: 'ROSSI',          price: 1555, image: 'ROSSI_GOLDGLOSS_stgcma',         specs: { Calibre: '.22 LR', Tipo: 'Palanca' } },
+      { name: 'Rossi Rio Bravo Gold Mate', brand: 'ROSSI',       price: 1555, image: 'ROSSI_RIO_BRAVO_GOLD_MATE_n65xtf', specs: { Calibre: '.22 LR', Tipo: 'Palanca' } },
+      { name: 'Mendoza Puma (Squad)',   brand: 'MENDOZA',        price: 1015, image: 'Mendoza_Puma_Squad_tgm0cw',      specs: { Tipo: 'Varilla',   Modelo: '1911' } },
+      { name: 'Winchester Wildcat',     brand: 'WINCHESTER',     price: 1345, image: 'Winchester_Wildcat_hqgfdj',      specs: { Calibre: '.22 LR' } },
+      { name: 'Kriss DMK22C FDE',       brand: 'KRISS USA',      price: 2640, image: 'KRISS_DMK22C_FDE_oodapo',        specs: { Calibre: '.22 LR' } },
+      { name: 'Kriss DMK22C BK',        brand: 'KRISS USA',      price: 2420, image: 'KRISS_DMK22C_BK_pucyem',         specs: { Calibre: '.22 LR' } },
+      { name: 'CZ 457 Training',        brand: 'CZ',             price: 2640, image: 'CZ_457_TRAINING_xdzpkr',         specs: { Calibre: '.22 LR' } },
     ],
   },
   {
     category: 'Escopetas',
     items: [
-      { name: 'Boito Reunas SB',        brand: 'BOITO',          price: 630,  image: 'catalogo/fuego/boito-reunas-sb',        specs: { Calibre: '12', Tipo: '2 tiros' } },
-      { name: 'Boito Miura Supreme',    brand: 'BOITO',          price: 1540, image: 'catalogo/fuego/boito-miura-supreme',    specs: { Calibre: '12' } },
-      { name: 'Boito Miura Special',    brand: 'BOITO',          price: 1400, image: 'catalogo/fuego/boito-miura-special',    specs: { Calibre: '12' } },
-      { name: 'Uzkon T17/T16',          brand: 'UZKON',          price: 715,  image: 'catalogo/fuego/uzkon-t17',             specs: { Calibre: '12' } },
-      { name: 'Taurus ST12',            brand: 'TAURUS',         price: 1320, image: 'catalogo/fuego/taurus-st12',           specs: { Calibre: '12' } },
-      { name: 'Hatsan Escort AS',       brand: 'HATSAN',         price: 1045, image: 'catalogo/fuego/hatsan-escort-as9',     specs: { Calibre: '12' } },
-      { name: 'Hatsan Escort Luxano',   brand: 'HATSAN',         price: 1540, image: 'catalogo/fuego/hatsan-escort-luxano',  specs: { Calibre: '12' } },
-      { name: 'Hatsan Escort Supreme',  brand: 'HATSAN',         price: 1320, image: 'catalogo/fuego/hatsan-escort-supreme', specs: { Calibre: '12' } },
-      { name: 'Hatsan Escort Supreme Max', brand: 'HATSAN',      price: 1485, image: 'catalogo/fuego/hatsan-escort-supreme-max', specs: { Calibre: '12' } },
+      { name: 'Boito Reunas SB',        brand: 'BOITO',          price: 630,  image: 'Boito_REUNA_SB_j6xjtj',                  specs: { Calibre: '12', Tipo: '2 tiros' } },
+      { name: 'Boito Miura Supreme',    brand: 'BOITO',          price: 1540, image: 'Boito_MIURA_SUPREME_rnzpf4',              specs: { Calibre: '12' } },
+      { name: 'Boito Miura Special',    brand: 'BOITO',          price: 1400, image: 'Boito_MIURA_SPECIAL_mh1myu',              specs: { Calibre: '12' } },
+      { name: 'Uzkon T17/T16',          brand: 'UZKON',          price: 715,  image: 'Uzkon_T16_T17_lhqrjt',                   specs: { Calibre: '12' } },
+      { name: 'Taurus ST12',            brand: 'TAURUS',         price: 1320, image: 'TAURUS_ST12_yrkwfa',                     specs: { Calibre: '12' } },
+      { name: 'Hatsan Escort AS',       brand: 'HATSAN',         price: 1045, image: 'Hatsan_Escort_AS_qf2rbi',                specs: { Calibre: '12' } },
+      { name: 'Hatsan Escort Luxano',   brand: 'HATSAN',         price: 1540, image: 'Hatsan_Escort_Luxano_vrff31',            specs: { Calibre: '12' } },
+      { name: 'Hatsan Escort Supreme',  brand: 'HATSAN',         price: 1320, image: 'Hatsan_Escort_Supreme_seceji',           specs: { Calibre: '12' } },
+      { name: 'Hatsan Escort Supreme Max', brand: 'HATSAN',      price: 1485, image: 'Hatsan_Escort_Supreme_Max_ribwdj',       specs: { Calibre: '12' } },
     ],
   },
 ];
@@ -80,103 +78,33 @@ const PCP_WEAPONS = [
   {
     category: 'Rifles PCP · Tiro por Tiro',
     items: [
-      { name: 'Bull Boss QE',      price: 790,  image: 'catalogo/pcp/bull-boss-qe',       specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1070 fps', Energía: '51 Jules',   Capacidad: '10', Tanque: '230 cc', Presión: '200 Bar', Disparos: '45',  Cañón: '23"'              } },
-      { name: 'AT44-10 Tact QE',   price: 805,  image: 'catalogo/pcp/at44-10-tact-qe',   specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '970 fps',  Energía: '42 Jules',   Capacidad: '10', Tanque: '180 cc', Presión: '200 Bar', Disparos: '55',  Cañón: '19,4"', Peso: '4,3 kg'  } },
-      { name: 'Predator Bolt',     price: 880,  image: 'catalogo/pcp/predator-bolt',      specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1150 fps', Energía: '58 Jules',   Capacidad: '14', Tanque: '565 cc', Presión: '200 Bar', Disparos: '48',  Cañón: '23"',   Peso: '5,1 kg'  } },
-      { name: 'Airmax Bolt',       price: 880,  image: 'catalogo/pcp/airmax-bolt',        specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1170 fps', Energía: '51 Jules',   Capacidad: '10', Tanque: '490 cc', Presión: '200 Bar', Disparos: '95',  Cañón: '23"',   Peso: '4,9 kg'  } },
-      { name: 'Nova Tact Compact', price: 940,  image: 'catalogo/pcp/nova-tact-compact',  specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1030 fps', Energía: '53,5 Jules', Capacidad: '10', Tanque: '500 cc', Presión: '250 Bar', Disparos: '150', Cañón: '23"',   Peso: '4,4 kg'  } },
-      { name: 'Gladius',           price: 980,  image: 'catalogo/pcp/gladius',            specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '970 fps',  Energía: '42 Jules',   Capacidad: '10', Tanque: '255 cc', Presión: '200 Bar', Disparos: '60',  Cañón: '19,4"', Peso: '4,65 kg' } },
-      { name: 'BT65SB-W',          price: 1100, image: 'catalogo/pcp/bt65sb-w',           specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1180 fps', Energía: '61 Jules',   Capacidad: '10', Tanque: '255 cc', Presión: '200 Bar', Disparos: '28',  Cañón: '23"',   Peso: '4,3 kg'  } },
-      { name: 'BT65SB Elite QE',   price: 1160, image: 'catalogo/pcp/bt65sb-elite-qe',   specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1180 fps', Energía: '61 Jules',   Capacidad: '10', Tanque: '255 cc', Presión: '200 Bar', Disparos: '28',  Cañón: '23"',   Peso: '4,4 kg'  } },
-      { name: 'Nova Star',         price: 1175, image: 'catalogo/pcp/nova-star',          specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1000 fps', Energía: '53,5 Jules', Capacidad: '12', Tanque: '480 cc', Presión: '250 Bar', Disparos: '100', Cañón: '23"',   Peso: '3,8 kg'  } },
-      { name: 'Hercules Bully',    price: 1370, image: 'catalogo/pcp/hercules-bully',     specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1230 fps', Energía: '67 Jules',   Capacidad: '14', Tanque: '500 cc', Presión: '250 Bar', Disparos: '40',  Cañón: '23"',   Peso: '4,65 kg' } },
+      { name: 'Bull Boss QE',      price: 790,  image: 'BULL_BOSS_QE_gvvamx',                  specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1070 fps', Energía: '51 Jules',   Capacidad: '10', Tanque: '230 cc', Presión: '200 Bar', Disparos: '45',  Cañón: '23"'              } },
+      { name: 'AT44-10 Tact QE',   price: 805,  image: 'AT_44_-_10_TACT_QE_fbexnr',            specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '970 fps',  Energía: '42 Jules',   Capacidad: '10', Tanque: '180 cc', Presión: '200 Bar', Disparos: '55',  Cañón: '19,4"', Peso: '4,3 kg'  } },
+      { name: 'Predator Bolt',     price: 880,  image: 'Hatsan_Predator_Bolt_eavxce',           specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1150 fps', Energía: '58 Jules',   Capacidad: '14', Tanque: '565 cc', Presión: '200 Bar', Disparos: '48',  Cañón: '23"',   Peso: '5,1 kg'  } },
+      { name: 'Airmax Bolt',       price: 880,  image: 'Hatsan_AIR_MAX_BOLT_d4uul9',            specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1170 fps', Energía: '51 Jules',   Capacidad: '10', Tanque: '490 cc', Presión: '200 Bar', Disparos: '95',  Cañón: '23"',   Peso: '4,9 kg'  } },
+      { name: 'Nova Tact Compact', price: 940,  image: 'Hatsan_NOVA_TACT_COMPACT_wbys1j',       specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1030 fps', Energía: '53,5 Jules', Capacidad: '10', Tanque: '500 cc', Presión: '250 Bar', Disparos: '150', Cañón: '23"',   Peso: '4,4 kg'  } },
+      { name: 'Gladius',           price: 980,  image: 'Hatsan_GLADIUS_vdrewt',                 specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '970 fps',  Energía: '42 Jules',   Capacidad: '10', Tanque: '255 cc', Presión: '200 Bar', Disparos: '60',  Cañón: '19,4"', Peso: '4,65 kg' } },
+      { name: 'BT65SB-W',          price: 1100, image: 'Hatsan_BT65SB-W_f5in4n',               specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1180 fps', Energía: '61 Jules',   Capacidad: '10', Tanque: '255 cc', Presión: '200 Bar', Disparos: '28',  Cañón: '23"',   Peso: '4,3 kg'  } },
+      { name: 'BT65SB Elite QE',   price: 1160, image: 'Hatsan_BT65SB_ELITE_QE_mxuvuw',        specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1180 fps', Energía: '61 Jules',   Capacidad: '10', Tanque: '255 cc', Presión: '200 Bar', Disparos: '28',  Cañón: '23"',   Peso: '4,4 kg'  } },
+      { name: 'Nova Star',         price: 1175, image: 'Hatsan_NOVA_STAR_wirf6h',               specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1000 fps', Energía: '53,5 Jules', Capacidad: '12', Tanque: '480 cc', Presión: '250 Bar', Disparos: '100', Cañón: '23"',   Peso: '3,8 kg'  } },
+      { name: 'Hercules Bully',    price: 1370, image: 'Hatsan_HERCULES_BULLY_khyuo5',          specs: { Operación: 'Tiro por tiro', Calibre: '5,5 mm', Velocidad: '1230 fps', Energía: '67 Jules',   Capacidad: '14', Tanque: '500 cc', Presión: '250 Bar', Disparos: '40',  Cañón: '23"',   Peso: '4,65 kg' } },
     ],
   },
   {
     category: 'Rifles PCP · Semiautomáticos',
     items: [
-      { name: 'Galatian Tact Auto', price: 1175, image: 'catalogo/pcp/galatian-tact-auto', specs: { Operación: 'Semiautomático', Calibre: '5,5 mm', Velocidad: '950 fps',  Energía: '39,8 Jules', Capacidad: '12', Tanque: '255 cc', Presión: '200 Bar', Disparos: '50',  Cañón: '19,7"', Peso: '4,15 kg' } },
-      { name: 'Barrage',            price: 1450, image: 'catalogo/pcp/barrage',            specs: { Operación: 'Semiautomático', Calibre: '5,5 mm', Velocidad: '970 fps',  Energía: '42 Jules',   Capacidad: '12', Tanque: '500 cc', Presión: '250 Bar', Disparos: '120', Cañón: '19,7"', Peso: '4,62 kg' } },
-      { name: 'Bull Master',        price: 1450, image: 'catalogo/pcp/bull-master',        specs: { Operación: 'Semiautomático', Calibre: '5,5 mm', Velocidad: '970 fps',  Energía: '42 Jules',   Capacidad: '12', Tanque: '530 cc', Presión: '250 Bar', Disparos: '120', Cañón: '19,7"', Peso: '4,7 kg'  } },
+      { name: 'Galatian Tact Auto', price: 1175, image: 'Hatsan_GALATIAN_TACT_AUTO_fxpfmh', specs: { Operación: 'Semiautomático', Calibre: '5,5 mm', Velocidad: '950 fps',  Energía: '39,8 Jules', Capacidad: '12', Tanque: '255 cc', Presión: '200 Bar', Disparos: '50',  Cañón: '19,7"', Peso: '4,15 kg' } },
+      { name: 'Barrage',            price: 1450, image: 'Hatsan_BARRAGE_wzremd',            specs: { Operación: 'Semiautomático', Calibre: '5,5 mm', Velocidad: '970 fps',  Energía: '42 Jules',   Capacidad: '12', Tanque: '500 cc', Presión: '250 Bar', Disparos: '120', Cañón: '19,7"', Peso: '4,62 kg' } },
+      { name: 'Bull Master',        price: 1450, image: 'Hatsan_BULL_MASTER_shtsl4',        specs: { Operación: 'Semiautomático', Calibre: '5,5 mm', Velocidad: '970 fps',  Energía: '42 Jules',   Capacidad: '12', Tanque: '530 cc', Presión: '250 Bar', Disparos: '120', Cañón: '19,7"', Peso: '4,7 kg'  } },
     ],
   },
   {
     category: 'Accesorios',
     items: [
-      { name: 'Bomba Manual de Llenado', price: 200, image: 'catalogo/pcp/bomba-manual', specs: { Presión: '200 Bar', Tipo: 'Bomba manual' } },
+      { name: 'Bomba Manual de Llenado', price: 200, image: 'Bomba_Manual_dhxb6o', specs: { Presión: '200 Bar', Tipo: 'Bomba manual' } },
     ],
   },
 ];
-
-// ── Image placeholder (no event handlers) ────────────────────────────────────
-function ProductImage({ publicId, alt, aspectRatio = '4/3' }: { publicId: string; alt: string; aspectRatio?: string }) {
-  const imageUrl = getCloudinaryImage(publicId, { width: 600, quality: 'auto', format: 'auto' });
-  const safeId = publicId.replace(/\//g, '-');
-
-  if (!imageUrl) {
-    return (
-      <div
-        style={{
-          position: 'relative',
-          width: '100%',
-          aspectRatio,
-          overflow: 'hidden',
-          background: '#0d0f0d',
-        }}
-        aria-label={alt}
-      >
-        <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.07 }} xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id={`grid-${safeId}`} width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#4ade80" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill={`url(#grid-${safeId})`} />
-        </svg>
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ opacity: 0.22 }}>
-            <circle cx="24" cy="24" r="20" stroke="#4ade80" strokeWidth="1.5" />
-            <circle cx="24" cy="24" r="8"  stroke="#4ade80" strokeWidth="1.5" />
-            <line x1="24" y1="0"  x2="24" y2="12" stroke="#4ade80" strokeWidth="1.5" />
-            <line x1="24" y1="36" x2="24" y2="48" stroke="#4ade80" strokeWidth="1.5" />
-            <line x1="0"  y1="24" x2="12" y2="24" stroke="#4ade80" strokeWidth="1.5" />
-            <line x1="36" y1="24" x2="48" y2="24" stroke="#4ade80" strokeWidth="1.5" />
-          </svg>
-          <span style={{ fontSize: '0.62rem', letterSpacing: '0.12em', color: '#444', textTransform: 'uppercase' }}>
-            Imagen próximamente
-          </span>
-        </div>
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, transparent, #4ade80 40%, transparent)', opacity: 0.35 }} />
-      </div>
-    );
-  }
-
-  return (
-    <div style={{ position: 'relative', width: '100%', aspectRatio, overflow: 'hidden', background: '#1a1a1a' }}>
-      <Image src={imageUrl} alt={alt} fill style={{ objectFit: 'cover' }} sizes="(max-width: 768px) 100vw, 33vw" />
-    </div>
-  );
-}
-
-// ── Brand badge ───────────────────────────────────────────────────────────────
-function BrandBadge({ brand }: { brand: string }) {
-  const info = BRAND_COUNTRY[brand];
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-      <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--faint)', fontWeight: 600 }}>
-        {brand}
-      </span>
-      {info && (
-        <ReactCountryFlag
-          countryCode={info.code}
-          svg
-          title={info.country}
-          style={{ width: '1.2em', height: '1.2em', borderRadius: '2px' }}
-        />
-      )}
-    </div>
-  );
-}
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function CatalogoPage() {
@@ -184,7 +112,7 @@ export default function CatalogoPage() {
     <>
       <RevealObserver />
 
-      {/* Hover styles via a plain <style> tag — no JS needed */}
+      {/* Hover + zoom-in cursor styles — no JS needed */}
       <style>{`
         .prod-card {
           border: 1px solid var(--line);
@@ -195,6 +123,7 @@ export default function CatalogoPage() {
           transition: border-color 0.2s;
         }
         .prod-card:hover { border-color: rgba(74,222,128,0.4); }
+        .prod-img:hover  { transform: scale(1.03); }
       `}</style>
 
       <PageHero
@@ -218,33 +147,25 @@ export default function CatalogoPage() {
                 {section.category}
               </h3>
               <div className="grid cols-3">
-                {section.items.map((item, i) => (
-                  <div key={i} className="prod-card" style={{ padding: 0 }}>
-                    <ProductImage publicId={item.image} alt={item.name} aspectRatio="4/3" />
-                    <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                      <BrandBadge brand={item.brand} />
-                      <h4 style={{ fontSize: '1.15rem', margin: '8px 0 16px', minHeight: '48px', lineHeight: 1.3 }}>
-                        {item.name}
-                      </h4>
-                      <div style={{ flexGrow: 1, marginBottom: '18px' }}>
-                        {Object.entries(item.specs).map(([k, v]) => (
-                          <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '5px 0', fontSize: '0.88rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                            <span style={{ color: 'var(--faint)' }}>{k}</span>
-                            <span style={{ fontWeight: 500 }}>{v as string}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '16px', borderTop: '2px solid var(--green-deep)' }}>
-                        <span style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--green-bright)' }}>
-                          ${item.price} <span style={{ fontSize: '0.85rem', fontWeight: 400, opacity: 0.7 }}>us.</span>
-                        </span>
-                        <a href={waLink(`Hola! Me interesa el ${item.name} - ${item.brand} ($${item.price})`)} target="_blank" rel="noopener noreferrer" className="btn btn--wa" style={{ padding: '8px 16px', fontSize: '0.88rem' }}>
-                          <Icon name="whatsapp" style={{ width: 15, height: 15 }} /> Consultar
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                {section.items.map((item, i) => {
+                  const info = BRAND_COUNTRY[item.brand];
+                  return (
+                    <ProductCard
+                      key={i}
+                      name={item.name}
+                      brand={item.brand}
+                      brandCode={info?.code}
+                      brandCountry={info?.country}
+                      price={item.price}
+                      imageUrl={getCloudinaryImage(item.image, { width: 600, quality: 'auto', format: 'auto' })}
+                      alt={item.name}
+                      specs={item.specs as unknown as Record<string, string>}
+                      waHref={waLink(`Hola! Me interesa el ${item.name} - ${item.brand} ($${item.price})`)}
+                      aspectRatio="4/3"
+                      layout="grid"
+                    />
+                  );
+                })}
               </div>
             </div>
           ))}
@@ -269,35 +190,19 @@ export default function CatalogoPage() {
               </h3>
               <div className="grid cols-2" style={{ gap: '24px' }}>
                 {section.items.map((item, i) => (
-                  <div key={i} className="prod-card" style={{ padding: 0 }}>
-                    <ProductImage publicId={item.image} alt={item.name} aspectRatio="16/7" />
-                    <div style={{ padding: '22px 24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                      {/* Hatsan badge */}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px' }}>
-                        <span style={{ fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--faint)', fontWeight: 600 }}>HATSAN</span>
-                        <ReactCountryFlag countryCode="TR" svg title="Turquía" style={{ width: '1.2em', height: '1.2em', borderRadius: '2px' }} />
-                      </div>
-                      {/* Name + price */}
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '12px', marginBottom: '20px' }}>
-                        <h4 style={{ fontSize: '1.35rem', margin: 0, lineHeight: 1.2, flex: 1 }}>{item.name}</h4>
-                        <span style={{ fontSize: '1.55rem', fontWeight: 700, color: 'var(--green-bright)', whiteSpace: 'nowrap' }}>
-                          ${item.price}<span style={{ fontSize: '0.85rem', fontWeight: 400, opacity: 0.7 }}> us.</span>
-                        </span>
-                      </div>
-                      {/* Specs grid */}
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px 20px', marginBottom: '22px', flexGrow: 1, padding: '16px', background: 'rgba(255,255,255,0.03)', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.06)' }}>
-                        {Object.entries(item.specs).map(([k, v]) => (
-                          <div key={k} style={{ fontSize: '0.82rem' }}>
-                            <span style={{ display: 'block', color: 'var(--faint)', textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '0.68rem', marginBottom: '2px' }}>{k}</span>
-                            <span style={{ fontWeight: 600, color: '#fff' }}>{v as string}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <a href={waLink(`Hola! Me interesa el ${item.name} PCP ($${item.price})`)} target="_blank" rel="noopener noreferrer" className="btn btn--wa btn--block">
-                        <Icon name="whatsapp" /> Consultar por este rifle
-                      </a>
-                    </div>
-                  </div>
+                  <ProductCard
+                    key={i}
+                    name={item.name}
+                    brandCode="TR"
+                    brandCountry="Turquía"
+                    price={item.price}
+                    imageUrl={getCloudinaryImage(item.image, { width: 800, quality: 'auto', format: 'auto' })}
+                    alt={item.name}
+                    specs={item.specs as unknown as Record<string, string>}
+                    waHref={waLink(`Hola! Me interesa el ${item.name} PCP ($${item.price})`)}
+                    aspectRatio="16/7"
+                    layout="wide"
+                  />
                 ))}
               </div>
             </div>
