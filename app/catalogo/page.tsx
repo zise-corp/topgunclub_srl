@@ -36,12 +36,12 @@ const FIREARMS = [
   {
     category: 'Pistolas',
     items: [
-      { name: 'Phoenix HP22A',          brand: 'PHOENIXARMS',    price: 805,  image: 'catalogo/fuego/phoenix-hp22a',           specs: { Calibre: '.22 LR', Tipo: 'Semiautomática' } },
-      { name: 'Sarsilmaz B6C',          brand: 'SARSILMAZ',      price: 1350, image: 'catalogo/fuego/sarsilmaz-b6c9',          specs: { Calibre: '9mm',    Tipo: 'Semiautomática' } },
-      { name: 'Walther P22Q',           brand: 'WALTHER',        price: 1945, image: 'catalogo/fuego/walther-p22q',            specs: { Calibre: '.22 LR', Tipo: 'Semiautomática' } },
-      { name: 'Smith & Wesson M&P Compact', brand: 'SMITH & WESSON', price: 1945, image: 'catalogo/fuego/sw-mp-compact',      specs: { Calibre: '9mm',    Tipo: 'Compacta' } },
-      { name: 'Ruger M&P Compact',      brand: 'RUGER',          price: 1945, image: 'catalogo/fuego/ruger-mp-compact',        specs: { Calibre: '9mm',    Tipo: 'Compacta' } },
-      { name: 'HS Produkt SF19',        brand: 'HS PRODUKT',     price: 2335, image: 'catalogo/fuego/hs-sf19',                specs: { Calibre: '9mm',    Cañón: '4.5"' } },
+      { name: 'Phoenix HP22A',          brand: 'PHOENIXARMS',    price: 805,  image: 'Phoenix_Arms_HP22A_wuplhw',           specs: { Calibre: '.22 LR', Tipo: 'Semiautomática' } },
+      { name: 'Sarsilmaz B6C',          brand: 'SARSILMAZ',      price: 1350, image: 'Sarsilmaz_B6C_nplhrn',               specs: { Calibre: '9mm',    Tipo: 'Semiautomática' } },
+      { name: 'Walther P22Q',           brand: 'WALTHER',        price: 1945, image: 'Walther_P22Q_qg6xqi',                specs: { Calibre: '.22 LR', Tipo: 'Semiautomática' } },
+      { name: 'Smith & Wesson M&P Compact', brand: 'SMITH & WESSON', price: 1945, image: 'SMITH_WESSON_M_P_COMPACT_wrdlaz', specs: { Calibre: '9mm',    Tipo: 'Compacta' } },
+      { name: 'Ruger M&P Compact',      brand: 'RUGER',          price: 1945, image: 'Ruger_M_P_Compact_v8njks',           specs: { Calibre: '9mm',    Tipo: 'Compacta' } },
+      { name: 'HS Produkt SF19',        brand: 'HS PRODUKT',     price: 2335, image: 'HS_Produkt_SF19_rf84ok',             specs: { Calibre: '9mm',    Cañón: '4.5"' } },
     ],
   },
   {
