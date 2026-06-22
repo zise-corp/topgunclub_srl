@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import RevealObserver from '@/components/RevealObserver';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
 import Icon from '@/components/Icon';
-import Ph from '@/components/Ph';
+import ImageCarousel from '@/components/ImageCarousel';
 import { waLink } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -30,6 +31,29 @@ const TORNEO_FEATS = [
   'Ambiente competitivo pero seguro y deportivo',
 ] as const;
 
+const CUMPLE_IMGS = [
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153472/Cumplea%C3%B1os_qjiaiy.jpg',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153475/Cumplea%C3%B1os3_lc3idf.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153475/Cumplea%C3%B1os4_pmwkl2.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153475/Cumplea%C3%B1os2_njp5iv.png',
+];
+
+const TORNEO_IMGS = [
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153679/Torneo_z8nmls.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153677/Torneo1_t4aegf.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153678/Torneo2_fxkath.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153675/Torneo3_n3vlhy.png',
+];
+
+const AMBIENTE_IMGS = [
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153807/Ambiente3_hdrlb0.png', label: 'Celebración de cumpleaños' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153807/Ambiente_avmt4e.png', label: 'Premiación torneo' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153808/Ambiente2_jmiqiq.png', label: 'Zona de celebración' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153804/Ambiente5_ppbjut.png', label: 'Competencia en pista' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153804/Ambiente4_e54g6l.png', label: 'Grupo de niños' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153803/Ambiente6_pi0mqe.png', label: 'Ambiente del club' },
+];
+
 export default function EventosPage() {
   return (
     <>
@@ -45,8 +69,8 @@ export default function EventosPage() {
       <section id="cumpleanos" className="section grain" style={{ scrollMarginTop: '100px' }}>
         <div className="container">
           <div className="split" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1" style={{ position: 'relative', aspectRatio: '4/3', borderRadius: 'var(--r)', overflow: 'hidden' }}>
-              <Ph label="Cumpleaños infantiles" style={{ position: 'absolute', inset: 0 }} />
+            <div className="split__media reveal" data-d="1">
+              <ImageCarousel images={CUMPLE_IMGS} />
             </div>
             <div className="reveal" data-d="2">
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
@@ -97,11 +121,8 @@ export default function EventosPage() {
       >
         <div className="container">
           <div className="split split--rev" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1" style={{ position: 'relative', aspectRatio: '4/3', borderRadius: 'var(--r)', overflow: 'hidden' }}>
-              <span className="pill" style={{ position: 'absolute', top: 16, left: 16, background: 'rgba(8,8,8,.85)', zIndex: 2 }}>
-                <Icon name="calendar" style={{ width: 16, height: 16, marginRight: 6 }} /> Una vez al mes
-              </span>
-              <Ph label="Torneos Top Gun Club" style={{ position: 'absolute', inset: 0 }} />
+            <div className="split__media reveal" data-d="1">
+              <ImageCarousel images={TORNEO_IMGS} />
             </div>
             <div className="reveal" data-d="2">
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
@@ -147,9 +168,15 @@ export default function EventosPage() {
             <h2 className="section-title">Así se <em>vive</em> el club</h2>
           </div>
           <div className="grid cols-3 reveal" data-d="2">
-            {['Celebración de cumpleaños', 'Premiación torneo', 'Zona de celebración', 'Competencia en pista', 'Grupo de niños', 'Ambiente del club'].map((l, i) => (
+            {AMBIENTE_IMGS.map((img, i) => (
               <div className="card" key={i} style={{ aspectRatio: '4/3', overflow: 'hidden', position: 'relative' }}>
-                <Ph label={l} style={{ position: 'absolute', inset: 0 }} />
+                <Image
+                  src={img.src}
+                  alt={img.label || 'Imagen del ambiente del club'}
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
               </div>
             ))}
           </div>

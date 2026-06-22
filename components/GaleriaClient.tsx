@@ -5,7 +5,7 @@ import { SOCIALS } from '@/lib/site';
 import Ph from './Ph';
 import Icon from './Icon';
 
-const CATS = ['Todo', 'Armas de Fuego', 'Airsoft', 'PCP', 'Arco y Flecha', 'Cumpleaños', 'Torneos', 'Instalaciones'] as const;
+const CATS = ['Todo', 'Armas de Fuego', 'Airsoft', 'PCP', 'Cumpleaños', 'Torneos', 'Instalaciones'] as const;
 
 const ITEMS = [
   // Armas de Fuego
@@ -22,10 +22,6 @@ const ITEMS = [
   { cat: 'PCP', label: 'Tiro de precisión', h: 360 },
   { cat: 'PCP', label: 'Postura olímpica', h: 300 },
   { cat: 'PCP', label: 'Concentración máxima', h: 340 },
-  
-  // Arco y Flecha
-  { cat: 'Arco y Flecha', label: 'Técnica de arco', h: 320 },
-  { cat: 'Arco y Flecha', label: 'Próximamente', h: 280 },
   
   // Cumpleaños
   { cat: 'Cumpleaños', label: 'Celebración infantil', h: 440 },
