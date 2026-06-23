@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import ImageLightbox from './Imagelightbox ';
+import ImageLightbox from './Imagelightbox';
 import ReactCountryFlag from 'react-country-flag';
 
 interface Spec { [key: string]: string }
@@ -68,6 +68,7 @@ export default function ProductCard({
       <Image src={imageUrl} alt={alt} fill style={{ objectFit: 'cover', transition: 'transform 0.3s ease' }}
         sizes="(max-width: 768px) 100vw, 50vw"
         className="prod-img"
+        unoptimized
       />
     </div>
   ) : placeholder;

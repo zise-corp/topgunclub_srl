@@ -103,6 +103,7 @@ export default function ImageLightbox({ src, alt, onClose }: Props) {
             boxShadow: '0 25px 60px rgba(0,0,0,0.7)',
           }}
           priority
+          unoptimized
         />
         <p style={{
           textAlign: 'center',
