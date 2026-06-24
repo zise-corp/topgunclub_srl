@@ -4,10 +4,14 @@ import { waLink } from '@/lib/site';
 import Icon from './Icon';
 
 const INTERESES = [
-  'Curso de tiro',
-  'Sesión de práctica',
-  'Airsoft',
-  'Evento / alquiler',
+  'Curso de Armas de Fuego',
+  'Curso de Airsoft',
+  'Curso de PCP',
+  'Arco y Flecha (próximamente)',
+  'Cumpleaños infantiles',
+  'Torneos mensuales',
+  'Sesión de práctica libre',
+  'Alquiler de espacio / Evento',
   'Servicio de comida',
   'Otra consulta',
 ] as const;

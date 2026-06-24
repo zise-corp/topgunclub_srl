@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { waLink } from '@/lib/site';
 import Icon from './Icon';
@@ -19,7 +18,7 @@ export default function EscuelaTeaser() {
         <div className="split">
           <div className="split__media reveal" style={{ position: 'relative' }}>
             <Image
-              src="/assets/piece-escuela.png"
+              src="https://res.cloudinary.com/dj5yikcc4/image/upload/v1781748380/Seguridad_a7uw6g.png"
               alt="Polígono de tiro bajo techo de Top Gun Club"
               fill
               style={{ objectFit: 'cover' }}
@@ -27,7 +26,7 @@ export default function EscuelaTeaser() {
             />
           </div>
           <div className="reveal" data-d="2">
-            <span className="eyebrow">Escuela de tiro deportivo</span>
+            <span className="eyebrow">Polígono de tiro Multifuncional</span>
             <h2 className="section-title" style={{ margin: '14px 0 18px' }}>
               Seguridad primero, <em>siempre</em>
             </h2>
@@ -44,16 +43,13 @@ export default function EscuelaTeaser() {
               ))}
             </ul>
             <div style={{ display: 'flex', gap: 12, marginTop: 26, flexWrap: 'wrap' }}>
-              <Link href="/escuela" className="btn btn--light">
-                Conocer la escuela <Icon name="arrow" />
-              </Link>
               <a
-                href={waLink('Hola! Quiero info sobre la escuela de tiro deportivo')}
+                href={waLink('Hola! Quiero obtener más detalles sobre la Escuela de Tiro y el Polígono')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--ghost"
+                className="btn btn--light"
               >
-                <Icon name="whatsapp" /> Consultar
+                <Icon name="whatsapp" /> Obtener más detalles
               </a>
             </div>
           </div>

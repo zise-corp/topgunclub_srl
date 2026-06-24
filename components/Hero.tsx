@@ -33,11 +33,11 @@ export default function Hero() {
       <div className="hero__vig" />
       <div className="container">
         <span className="pill reveal in">
-          <span className="dot" /> Polígono de tiro bajo techo · Cochabamba, Bolivia
+          <span className="dot" />Cochabamba, Bolivia
         </span>
         <h1 className="hero__title reveal in" data-d="1">
-          <span>Escuela de tiro</span>
-          <span className="hl">deportivo</span>
+          <span>Polígono de tiro</span>
+          <span className="hl">multifuncional</span>
         </h1>
         <p className="hero__sub reveal in" data-d="2">
           De novato a experto. Entrenamiento seguro, disciplina y experiencia real cumpliendo la{' '}

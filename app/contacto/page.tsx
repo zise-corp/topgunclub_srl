@@ -11,7 +11,7 @@ import { SOCIALS, PHONE_DISPLAY, waLink } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Contacto, Ubicación y FAQ · Top Gun Club SRL',
   description:
-    'Contactá a Top Gun Club SRL en Cochabamba, Bolivia. Reservá por WhatsApp (+591 69500967), consultá horarios, ubicación y preguntas frecuentes sobre tiro deportivo, airsoft y eventos.',
+    'Contactá a Top Gun Club SRL en Cochabamba, Bolivia. Reservá por WhatsApp (+591 69500967) para cursos de tiro, airsoft, PCP, cumpleaños infantiles y torneos mensuales.',
 };
 
 export default function ContactoPage() {
@@ -22,7 +22,7 @@ export default function ContactoPage() {
         crumb="Contacto"
         label="Cochabamba, Bolivia"
         title={<>Hablemos & <span className="hl" style={{ display: 'inline' }}>reservá</span></>}
-        sub="Escribinos por WhatsApp para reservar tu cupo, cotizar un evento o resolver cualquier duda. Estamos para ayudarte."
+        sub="Escribinos por WhatsApp para reservar tu cupo, cotizar un cumpleaños o resolver cualquier duda. Estamos para ayudarte."
       />
 
       {/* Contacto + formulario */}
@@ -66,7 +66,7 @@ export default function ContactoPage() {
                 <div className="ic"><Icon name="clock" /></div>
                 <div>
                   <h4>Horarios</h4>
-                  <p>Lunes a Domingo · <span style={{ color: 'var(--faint)' }}>horario editable</span></p>
+                  <p>Lunes a Domingo · <span style={{ color: 'var(--faint)' }}>consultá horarios por WhatsApp</span></p>
                 </div>
               </div>
               <div className="info-row" style={{ borderBottom: 'none' }}>
@@ -129,21 +129,18 @@ export default function ContactoPage() {
             </div>
             <div className="split__media reveal" data-d="2" style={{ aspectRatio: '3/4' }}>
               <Image
-                src="/assets/asesor.png"
+                src="https://res.cloudinary.com/dj5yikcc4/image/upload/v1782256193/Contacto_wpcude.png"
                 alt="Asesor Autorizado Top Gun Club"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'top center' }}
                 sizes="(max-width:860px) 100vw, 45vw"
               />
-              <span className="pill" style={{ position: 'absolute', bottom: 16, left: 16, background: 'rgba(8,8,8,.88)' }}>
-                <span className="dot" /> Asesor autorizado
-              </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Mapa */}
+      {/* Mapa + Dirección */}
       <section className="section--tight" style={{ paddingTop: 'clamp(40px,5vw,72px)' }}>
         <div className="container">
           <div
@@ -159,18 +156,27 @@ export default function ContactoPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <span className="pill" style={{ position: 'absolute', top: 16, left: 16, background: 'rgba(8,8,8,.85)' }}>
-              <span className="dot" /> Top Gun Club SRL · Cochabamba, Bolivia
-            </span>
-            <a
-              href="https://g.page/r/CRunhge8dwfZEBA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pill"
-              style={{ position: 'absolute', top: 16, right: 16, background: 'rgba(8,8,8,.85)', cursor: 'pointer' }}
-            >
-              Abrir en Google Maps →
-            </a>
+          </div>
+
+          {/* Dirección debajo del mapa */}
+          <div
+            className="reveal"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              marginTop: '18px',
+              padding: '14px 18px',
+              background: 'rgba(255,255,255,0.03)',
+              border: '1px solid var(--line)',
+              borderRadius: 'var(--r)',
+              maxWidth: '640px'
+            }}
+          >
+            <Icon name="pin" style={{ width: 20, height: 20, color: 'var(--green-bright)', flexShrink: 0 }} />
+            <p style={{ margin: 0, fontSize: '0.95rem', color: 'var(--faint)', lineHeight: 1.5 }}>
+              <strong style={{ color: '#fff' }}>Dirección:</strong> Avenida Francisco Bedregal entre Lope de Vega y Mostajo. Zona Temporal.
+            </p>
           </div>
         </div>
       </section>

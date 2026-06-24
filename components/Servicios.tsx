@@ -13,45 +13,52 @@ const SERVICES: {
 }[] = [
   {
     icon: 'target',
-    title: 'Escuela de Tiro Deportivo',
+    title: 'Curso de uso y manejo seguro de armas de fuego',
     text: 'Formación segura y progresiva con instructores certificados. De cero a tirador competente bajo la Ley 400.',
-    href: '/escuela',
-    img: '/assets/piece-escuela.png',
-  },
-  {
-    icon: 'calendar',
-    title: 'Cursos Intensivos',
-    text: 'Programas estructurados por niveles. Destaca el Curso de 1 semana: de novato a experto.',
-    href: '/cursos',
-    img: '/assets/piece-experto.png',
+    href: '/cursos#fuego',
+    img: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781745771/Fuego_mu3j0d.jpg',
   },
   {
     icon: 'shield',
-    title: 'Entrenamiento Airsoft',
+    title: 'Curso Vacacional de Airsoft',
     text: 'Experiencias y entrenamiento táctico de airsoft para grupos, amigos y equipos. Diversión con disciplina.',
     href: '/cursos#airsoft',
-    ph: 'Airsoft táctico',
-  },
-  {
-    icon: 'users',
-    title: 'Alquiler para Eventos',
-    text: 'Ambientes amplios para empresas, cumpleaños, despedidas y team building. El lugar perfecto para cualquier evento.',
-    href: '/eventos',
-    ph: 'Eventos / espacio',
-  },
-  {
-    icon: 'food',
-    title: 'Servicio de Comida',
-    text: 'Cocina y catering en el club para acompañar tu sesión, evento o jornada de práctica.',
-    href: '/eventos#comida',
-    ph: 'Servicio de comida',
+    img: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781746764/Airsoft_axhwxa.jpg',
   },
   {
     icon: 'target',
-    title: 'Polígono / Práctica Libre',
-    text: 'Polígono bajo techo con distintas distancias y disciplinas. Práctica libre con equipo de protección.',
-    href: '/escuela#poligono',
-    ph: 'Polígono bajo techo',
+    title: 'Curso Vacacional De PCP',
+    text: 'Programas estructurados por niveles para pistolas de aire comprimido. Precisión, técnica y seguridad en cada disparo.',
+    href: '/cursos#pcp',
+    img: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781746763/PCP_dxeaq9.jpg',
+  },
+  {
+    icon: 'star',
+    title: 'Próximamente Curso Vacacional de Arco y Flecha',
+    text: 'Una nueva disciplina que se suma a nuestro club. Precisión, concentración y técnica tradicional. ¡Muy pronto disponible!',
+    href: '/cursos#arco',
+    img: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781746764/ArcoFlecha_tdgmrt.png',
+  },
+  {
+    icon: 'clock',
+    title: 'Sesiones',
+    text: 'Entra a la línea de tiro y siente la adrenalina en su estado más puro. Sesiones guiadas por profesionales, Una experiencia intensa, segura e inolvidable.',
+    href: '/catalogo#fuego',
+    img: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781746764/Sesiones_kidi79.jpg',
+  },
+  {
+    icon: 'users',
+    title: 'Alquiler para cumpleaños y eventos especiales',
+    text: 'Ambientes amplios para empresas, cumpleaños, despedidas y team building. El lugar perfecto para cualquier evento.',
+    href: '/eventos#cumpleanos',
+    img: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781746764/Cumplea%C3%B1os_jnwlot.jpg',
+  },
+  {
+    icon: 'star',
+    title: 'Torneos Multidisciplinarios',
+    text: 'Competencias de tiro deportivo, airsoft y PCP. Demostrá tu nivel y competí con otros tiradores en Cochabamba.',
+    href: '/eventos#torneos',
+    img: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781746765/Torneo.jpg_woljmx.png',
   },
 ];
 
@@ -65,7 +72,7 @@ export default function Servicios() {
             Un club, <em>muchas</em> formas de vivirlo
           </h2>
           <p className="lead">
-            Tiro deportivo, airsoft, eventos y más — todo en un solo lugar, con la seguridad y el
+            Tiro deportivo con armas de fuego, Airsoft, PCP y más — todo en un solo lugar, con la seguridad y el
             profesionalismo como base de cada experiencia.
           </p>
         </div>
@@ -73,15 +80,13 @@ export default function Servicios() {
           {SERVICES.map((s, i) => (
             <Link className="card svc reveal" data-d={(i % 3) + 1} href={s.href} key={s.title}>
               <div className="svc__img">
-                <span className="badge">
-                  <Icon name={s.icon} />
-                </span>
+                {/* Se eliminó el span del badge/icono que tapaba la imagen */}
                 {s.img ? (
                   <Image
                     src={s.img}
                     alt={s.title}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', objectPosition: 'top center' }}
                     sizes="(max-width:900px) 100vw, 33vw"
                   />
                 ) : (

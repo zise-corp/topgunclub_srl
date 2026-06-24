@@ -3,7 +3,7 @@ import type { SVGProps } from 'react';
 export type IconName =
   | 'whatsapp' | 'phone' | 'pin' | 'clock' | 'arrow' | 'up' | 'check'
   | 'shield' | 'target' | 'star' | 'facebook' | 'instagram' | 'tiktok'
-  | 'food' | 'calendar' | 'users' | 'plus';
+  | 'food' | 'calendar' | 'users' | 'plus' | 'chevron';
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   name: IconName;
@@ -33,6 +33,7 @@ const paths: Record<IconName, React.ReactElement> = {
   calendar: <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14v11z" />,
   users: <path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm-8 0a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-2.7 0-8 1.34-8 4v3h10v-3c0-.99.76-1.86 1.96-2.5A14 14 0 0 0 8 13zm8 0c-.34 0-.72.02-1.13.06A4.9 4.9 0 0 1 18 17v3h6v-3c0-2.66-5.3-4-8-4z" />,
   plus: <path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z" />,
+  chevron: <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />,
 };
 
 export default function Icon({ name, ...p }: IconProps) {

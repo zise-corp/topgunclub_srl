@@ -1,34 +1,58 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import RevealObserver from '@/components/RevealObserver';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
-import Icon, { type IconName } from '@/components/Icon';
-import Ph from '@/components/Ph';
+import Icon from '@/components/Icon';
+import ImageCarousel from '@/components/ImageCarousel';
 import { waLink } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Eventos, Alquiler del Espacio y Comida · Top Gun Club SRL',
+  title: 'Eventos · Cumpleaños y Torneos · Top Gun Club SRL',
   description:
-    'Alquilá el espacio de Top Gun Club para eventos en Cochabamba: empresas, cumpleaños, despedidas y team building. Ambientes amplios, tiro deportivo, airsoft y servicio de comida.',
+    'Eventos en Top Gun Club Cochabamba: cumpleaños infantiles con actividades seguras y supervisadas, y torneos mensuales exclusivos para alumnos formados.',
 };
 
-const TIPOS: { ico: IconName; h: string; p: string }[] = [
-  { ico: 'users', h: 'Empresas', p: 'Team building, capacitaciones y celebraciones de equipo con una experiencia diferente.' },
-  { ico: 'star', h: 'Cumpleaños', p: 'Una celebración inolvidable: tiro deportivo o airsoft, ambiente amplio y comida.' },
-  { ico: 'calendar', h: 'Despedidas', p: 'Despedidas de soltero/a y reuniones de grupo llenas de adrenalina y diversión.' },
-  { ico: 'target', h: 'Grupos & amigos', p: 'Juntá a tu grupo para una jornada de airsoft o práctica de tiro deportivo.' },
-];
-
-const INCLUYE = [
-  'Ambientes amplios y versátiles',
-  'Servicio de comida y catering',
-  'Experiencia de tiro o airsoft a medida',
-  'Personal y supervisión de seguridad',
-  'Espacio para reuniones y celebración',
-  'Cotización personalizada según tu evento',
+const CUMPLE_INCLUYE = [
+  'Actividades adaptadas para niños (PCP, airsoft suave, arco)',
+  'Instructores certificados y supervisión permanente',
+  'Equipo de protección incluido para todos',
+  'Espacio amplio para celebración y comida',
+  'Opción de catering y servicio de comida',
+  'Ambiente seguro y controlado bajo Ley 400',
 ] as const;
 
-const AMBIENTE_PH = ['Salón principal', 'Zona de comida', 'Área de eventos', 'Tiro en grupo', 'Celebraciones', 'Equipo y staff'] as const;
+const TORNEO_FEATS = [
+  'Exclusivo para alumnos que completaron un curso',
+  'Se realiza una vez al mes (consulta la fecha)',
+  'Disciplinas: armas de fuego, airsoft y PCP',
+  'Premios y reconocimiento para los mejores',
+  'Ranking mensual de tiradores del club',
+  'Ambiente competitivo pero seguro y deportivo',
+] as const;
+
+const CUMPLE_IMGS = [
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153472/Cumplea%C3%B1os_qjiaiy.jpg',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153475/Cumplea%C3%B1os3_lc3idf.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153475/Cumplea%C3%B1os4_pmwkl2.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153475/Cumplea%C3%B1os2_njp5iv.png',
+];
+
+const TORNEO_IMGS = [
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153679/Torneo_z8nmls.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153677/Torneo1_t4aegf.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153678/Torneo2_fxkath.png',
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153675/Torneo3_n3vlhy.png',
+];
+
+const AMBIENTE_IMGS = [
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153807/Ambiente3_hdrlb0.png', label: 'Celebración de cumpleaños' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153807/Ambiente_avmt4e.png', label: 'Premiación torneo' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153808/Ambiente2_jmiqiq.png', label: 'Zona de celebración' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153804/Ambiente5_ppbjut.png', label: 'Competencia en pista' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153804/Ambiente4_e54g6l.png', label: 'Grupo de niños' },
+  { src: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1782153803/Ambiente6_pi0mqe.png', label: 'Ambiente del club' },
+];
 
 export default function EventosPage() {
   return (
@@ -36,84 +60,107 @@ export default function EventosPage() {
       <RevealObserver />
       <PageHero
         crumb="Eventos"
-        label="Alquiler del espacio"
-        title={<>Eventos & <span className="hl" style={{ display: 'inline' }}>experiencias</span></>}
-        sub="El lugar perfecto para cualquier evento. Ambientes amplios, comida, tiro deportivo y más — todo en un solo lugar, en Cochabamba."
+        label="Experiencias únicas"
+        title={<>Eventos & <span className="hl" style={{ display: 'inline' }}>torneos</span></>}
+        sub="Desde cumpleaños infantiles inolvidables hasta torneos mensuales para tiradores formados. Dos formas de vivir Top Gun Club al máximo."
       />
 
-      {/* Intro split */}
-      <section className="section grain">
+      {/* 1. Cumpleaños Infantiles */}
+      <section id="cumpleanos" className="section grain" style={{ scrollMarginTop: '100px' }}>
         <div className="container">
-          <div className="split">
-            <div className="reveal">
-              <span className="eyebrow">El espacio</span>
-              <h2 className="section-title" style={{ margin: '14px 0 18px' }}>
-                Ambientes <em>amplios</em>, momentos grandes
+          <div className="split" style={{ alignItems: 'center' }}>
+            <div className="split__media reveal" data-d="1">
+              <ImageCarousel images={CUMPLE_IMGS} />
+            </div>
+            <div className="reveal" data-d="2">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Icon name="star" style={{ width: 22, height: 22 }} />
+                </div>
+                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Cumpleaños Infantiles</span>
+              </div>
+              <h2 className="section-title" style={{ margin: '0 0 18px' }}>
+                Un cumple <em>inolvidable</em>
               </h2>
-              <p className="lead">
-                Nuestro club no es solo un polígono: es un espacio pensado para reunir gente. Ideal para empresas,
-                cumpleaños, despedidas y team building, combinando la emoción del tiro deportivo o el airsoft con
-                un buen ambiente y servicio de comida.
+              <p className="lead" style={{ marginBottom: '24px' }}>
+                Celebra el cumpleaños de tus hijos en un lugar diferente, seguro y lleno de adrenalina. 
+                Actividades adaptadas para niños, supervisadas en todo momento por instructores certificados. 
+                Diversión, disciplina y recuerdos que durarán para siempre.
               </p>
-              <ul className="checks">
-                {INCLUYE.map(t => (
-                  <li key={t}>
+              <ul className="checks" style={{ marginBottom: '32px' }}>
+                {CUMPLE_INCLUYE.map((t, idx) => (
+                  <li key={idx}>
                     <span className="ck"><Icon name="check" /></span>
                     <span>{t}</span>
                   </li>
                 ))}
               </ul>
-              <div style={{ display: 'flex', gap: 12, marginTop: 26, flexWrap: 'wrap' }}>
-                <a
-                  href={waLink('Hola! Quiero cotizar el alquiler del espacio para un evento')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn--wa btn--lg"
-                >
-                  <Icon name="whatsapp" /> Cotizar mi evento
-                </a>
-              </div>
-            </div>
-            <div className="split__media reveal" data-d="2">
-              <Ph label="Ambiente / salón de eventos" />
+              <a
+                href={waLink('Hola! Quiero cotizar un cumpleaños infantil en Top Gun Club')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn--wa btn--lg"
+              >
+                <Icon name="whatsapp" /> Cotizar cumpleaños
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Tipos de evento */}
-      <section
-        className="section section--tight"
-        style={{ background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }}
+      {/* 2. Torneos Mensuales */}
+      <section 
+        id="torneos" 
+        className="section section--tight" 
+        style={{ 
+          background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', 
+          borderTop: '1px solid var(--line)', 
+          borderBottom: '1px solid var(--line)',
+          scrollMarginTop: '100px'
+        }}
       >
         <div className="container">
-          <div className="shead center reveal">
-            <span className="eyebrow eyebrow--center">Para toda ocasión</span>
-            <h2 className="section-title">Tipos de <em>evento</em></h2>
-          </div>
-          <div className="grid cols-4">
-            {TIPOS.map((t, i) => (
-              <div
-                className="card level reveal"
-                data-d={(i % 4) + 1}
-                key={t.h}
-                style={{ padding: '28px 24px' }}
-              >
-                <div
-                  className="ico"
-                  style={{ width: 46, height: 46, borderRadius: 11, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}
-                >
-                  <Icon name={t.ico} style={{ width: 24, height: 24 }} />
+          <div className="split split--rev" style={{ alignItems: 'center' }}>
+            <div className="split__media reveal" data-d="1">
+              <ImageCarousel images={TORNEO_IMGS} />
+            </div>
+            <div className="reveal" data-d="2">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Icon name="target" style={{ width: 22, height: 22 }} />
                 </div>
-                <h3 style={{ fontSize: '1.5rem' }}>{t.h}</h3>
-                <p>{t.p}</p>
+                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Torneos Mensuales</span>
               </div>
-            ))}
+              <h2 className="section-title" style={{ margin: '0 0 18px' }}>
+                Competí con los <em>mejores</em>
+              </h2>
+              <p className="lead" style={{ marginBottom: '24px' }}>
+                Una vez al mes abrimos el polígono para nuestros torneos oficiales. Una oportunidad 
+                para poner a prueba tu nivel, conocer a otros tiradores de Cochabamba y formar parte 
+                de la comunidad Top Gun Club. Exclusivo para quienes ya completaron un curso con nosotros.
+              </p>
+              <ul className="checks" style={{ marginBottom: '32px' }}>
+                {TORNEO_FEATS.map((t, idx) => (
+                  <li key={idx}>
+                    <span className="ck"><Icon name="check" /></span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={waLink('Hola! Quiero información sobre los torneos mensuales de Top Gun Club')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn--wa btn--lg"
+              >
+                <Icon name="whatsapp" /> Inscribirme al torneo
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Galería ambiente */}
+      {/* Galería del ambiente */}
       <section className="section grain">
         <div className="container">
           <div className="shead reveal">
@@ -121,55 +168,25 @@ export default function EventosPage() {
             <h2 className="section-title">Así se <em>vive</em> el club</h2>
           </div>
           <div className="grid cols-3 reveal" data-d="2">
-            {AMBIENTE_PH.map((l, i) => (
+            {AMBIENTE_IMGS.map((img, i) => (
               <div className="card" key={i} style={{ aspectRatio: '4/3', overflow: 'hidden', position: 'relative' }}>
-                <Ph label={l} style={{ position: 'absolute', inset: 0 }} />
+                <Image
+                  src={img.src}
+                  alt={img.label || 'Imagen del ambiente del club'}
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Comida */}
-      <section
-        id="comida"
-        className="section section--tight"
-        style={{ background: 'linear-gradient(180deg,var(--bg),#0d0f0e)', borderTop: '1px solid var(--line)', scrollMarginTop: '90px' }}
-      >
-        <div className="container">
-          <div className="split split--rev">
-            <div className="split__media reveal" data-d="2">
-              <Ph label="Servicio de comida / cocina" />
-            </div>
-            <div className="reveal">
-              <span className="eyebrow">Servicio de comida</span>
-              <h2 className="section-title" style={{ margin: '14px 0 18px' }}>
-                Buena comida, <em>mejor</em> experiencia
-              </h2>
-              <p className="lead">
-                Acompañá tu sesión, jornada o evento con nuestro servicio de comida. Desde un snack entre
-                prácticas hasta el catering completo de tu celebración, lo coordinamos para que solo te
-                preocupes por disfrutar.
-              </p>
-              <div style={{ display: 'flex', gap: 12, marginTop: 26, flexWrap: 'wrap' }}>
-                <a
-                  href={waLink('Hola! Quiero info sobre el servicio de comida para mi evento')}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn--wa"
-                >
-                  <Icon name="whatsapp" /> Consultar menú
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <FinalCta
-        title="Cotizá tu evento sin compromiso"
-        text="Contanos qué tenés en mente y armamos una propuesta a tu medida: espacio, experiencia y comida."
-        msg="Hola! Quiero cotizar un evento en Top Gun Club (fecha, cantidad de personas y tipo de evento)"
+        title="¿Listo para vivir la experiencia?"
+        text="Ya sea un cumpleaños inolvidable o tu próximo torneo, te esperamos en Top Gun Club."
+        msg="Hola! Quiero info sobre los eventos de Top Gun Club"
       />
     </>
   );
