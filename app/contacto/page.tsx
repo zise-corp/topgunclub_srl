@@ -129,15 +129,12 @@ export default function ContactoPage() {
             </div>
             <div className="split__media reveal" data-d="2" style={{ aspectRatio: '3/4' }}>
               <Image
-                src="/assets/asesor.png"
+                src="https://res.cloudinary.com/dj5yikcc4/image/upload/v1782256193/Contacto_wpcude.png"
                 alt="Asesor Autorizado Top Gun Club"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'top center' }}
                 sizes="(max-width:860px) 100vw, 45vw"
               />
-              <span className="pill" style={{ position: 'absolute', bottom: 16, left: 16, background: 'rgba(8,8,8,.88)' }}>
-                <span className="dot" /> Asesor autorizado
-              </span>
             </div>
           </div>
         </div>
