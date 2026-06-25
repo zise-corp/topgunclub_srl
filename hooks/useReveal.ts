@@ -3,9 +3,8 @@ import { useEffect } from 'react';
 
 export function useReveal() {
   useEffect(() => {
-    const els = document.querySelectorAll<HTMLElement>('.reveal:not(.in)');
     if (!('IntersectionObserver' in window)) {
-      els.forEach(e => e.classList.add('in'));
+      document.querySelectorAll<HTMLElement>('.reveal').forEach(e => e.classList.add('in'));
       return;
     }
     const io = new IntersectionObserver(
@@ -17,9 +16,9 @@ export function useReveal() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -8% 0px' },
+      { threshold: 0.05, rootMargin: '0px' },
     );
-    els.forEach(e => io.observe(e));
-    return () => io.disconnect();
-  });
+    document.querySelectorAll<HTMLElement>('.reveal:not(.in)').forEach(e => io.observe(e));
+    return () => { io.disconnect(); };
+  }, []);
 }

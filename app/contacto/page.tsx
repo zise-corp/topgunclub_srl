@@ -73,7 +73,7 @@ export default function ContactoPage() {
                 <div className="ic"><Icon name="star" /></div>
                 <div>
                   <h4>Seguinos</h4>
-                  <div style={{ display: 'flex', gap: 10, marginTop: 8, flexWrap: 'wrap' }}>
+                  <div className="contact-socials" style={{ display: 'flex', gap: 10, marginTop: 8, flexWrap: 'wrap' }}>
                     <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" className="btn btn--ghost" style={{ padding: '9px 14px' }}>
                       <Icon name="facebook" style={{ width: 18, height: 18 }} /> Facebook
                     </a>
@@ -127,7 +127,7 @@ export default function ContactoPage() {
                 <Icon name="whatsapp" /> Escribir al asesor
               </a>
             </div>
-            <div className="split__media reveal" data-d="2" style={{ aspectRatio: '3/4' }}>
+            <div className="split__media contact-asesor-img reveal" data-d="2" style={{ aspectRatio: '3/4' }}>
               <Image
                 src="https://res.cloudinary.com/dj5yikcc4/image/upload/v1782256193/Contacto_wpcude.png"
                 alt="Asesor Autorizado Top Gun Club"
@@ -152,6 +152,7 @@ export default function ContactoPage() {
               src="https://maps.google.com/maps?q=Top+Gun+Club+SRL+Cochabamba+Bolivia&output=embed&hl=es"
               width="100%"
               height={420}
+              className="contact-map"
               style={{ border: 0, display: 'block', filter: 'grayscale(.4) contrast(1.05) brightness(.85)' }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

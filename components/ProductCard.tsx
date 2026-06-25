@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Image from 'next/image';
-import ImageLightbox from './Imagelightbox';
+import ProductLightbox from './ProductLightbox';
 import ReactCountryFlag from 'react-country-flag';
 
 interface Spec { [key: string]: string }
@@ -31,7 +31,7 @@ export default function ProductCard({
 
   const placeholder = (
     <div
-      style={{ position: 'relative', width: '100%', aspectRatio, overflow: 'hidden', background: '#0d0f0d', cursor: 'default' }}
+      style={{ position: 'relative', width: '100%', aspectRatio, overflow: 'hidden', background: '#111', cursor: 'default' }}
       aria-label={alt}
     >
       <svg width="100%" height="100%" style={{ position: 'absolute', inset: 0, opacity: 0.07 }} xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +143,12 @@ export default function ProductCard({
       </div>
 
       {open && imageUrl && (
-        <ImageLightbox src={imageUrl} alt={alt} onClose={() => setOpen(false)} />
+        <ProductLightbox
+          imageUrl={imageUrl} alt={alt}
+          name={name} brand={brand} brandCode={brandCode} brandCountry={brandCountry}
+          price={price} specs={specs} waHref={waHref}
+          onClose={() => setOpen(false)}
+        />
       )}
     </>
   );

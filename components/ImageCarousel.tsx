@@ -20,49 +20,53 @@ export default function ImageCarousel({ images, comingSoon }: ImageCarouselProps
   }, [images.length]);
 
   return (
-    <div style={{ position: 'relative', aspectRatio: '4/3', borderRadius: 'var(--r)', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', width: '100%', borderRadius: '10px', overflow: 'hidden' }}>
       {comingSoon && (
         <span className="pill" style={{ position: 'absolute', top: 16, left: 16, background: 'rgba(8,8,8,.85)', zIndex: 2 }}>
           <Icon name="clock" style={{ width: 16, height: 16, marginRight: 6 }} /> Próximamente
         </span>
       )}
-      {images.map((img, idx) => (
-        <div
-          key={idx}
-          style={{
-            position: 'absolute',
-            inset: 0,
-            opacity: idx === current ? 1 : 0,
-            transition: 'opacity 1s ease-in-out',
-          }}
-        >
-          <Image
-            src={img}
-            alt={`Imagen ${idx + 1}`}
-            fill
-            style={{ 
-              objectFit: 'contain',
-              objectPosition: 'center'
+
+      {/* Grid de una celda: todos los slides apilados, el contenedor se adapta al más alto */}
+      <div style={{ display: 'grid', width: '100%' }}>
+        {images.map((img, idx) => (
+          <div
+            key={idx}
+            style={{
+              gridArea: '1 / 1',
+              opacity: idx === current ? 1 : 0,
+              transition: 'opacity 1.2s ease-in-out',
+              pointerEvents: idx === current ? 'auto' : 'none',
             }}
-            sizes="(max-width: 860px) 100vw, 50vw"
-            priority={idx === 0}
-          />
-        </div>
-      ))}
+          >
+            <Image
+              src={img}
+              alt={`Imagen ${idx + 1}`}
+              width={900}
+              height={700}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+              sizes="(max-width: 860px) 100vw, 50vw"
+              priority={idx === 0}
+              unoptimized
+            />
+          </div>
+        ))}
+      </div>
+
       {images.length > 1 && (
-        <div style={{ position: 'absolute', bottom: 16, left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: 8, zIndex: 2 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: 7, marginTop: 12 }}>
           {images.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrent(idx)}
               style={{
-                width: 10,
-                height: 10,
-                borderRadius: '50%',
-                background: idx === current ? 'var(--green-bright)' : 'rgba(255,255,255,0.5)',
+                width: idx === current ? 22 : 8,
+                height: 8,
+                borderRadius: 4,
+                background: idx === current ? 'var(--green-bright)' : 'rgba(255,255,255,0.3)',
                 border: 'none',
                 cursor: 'pointer',
-                transition: 'background 0.3s',
+                transition: 'all 0.3s ease',
               }}
               aria-label={`Ir a imagen ${idx + 1}`}
             />

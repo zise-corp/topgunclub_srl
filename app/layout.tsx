@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingActions from '@/components/FloatingActions';
+import TacticalCursor from '@/components/TacticalCursor';
 
 const barlow = Barlow({
   variable: '--font-barlow',
@@ -75,6 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         <FloatingActions />
+        <TacticalCursor />
       </body>
     </html>
   );

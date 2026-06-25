@@ -51,14 +51,13 @@ export default function Testimonios() {
         
         <div className="split reveal" data-d="2" style={{ alignItems: 'center', gap: '48px' }}>
           {/* Imagen del testimonio */}
-          <div 
-            className="split__media" 
-            style={{ 
-              position: 'relative', 
-              aspectRatio: '4/3', 
-              borderRadius: 'var(--r)', 
+          <div
+            className="split__media"
+            style={{
+              position: 'relative',
+              aspectRatio: '4/3',
+              borderRadius: 'var(--r)',
               overflow: 'hidden',
-              minHeight: '300px'
             }}
           >
             {TESTIMONIALS.map((t, idx) => (
@@ -79,7 +78,7 @@ export default function Testimonios() {
           </div>
 
           {/* Texto del testimonio */}
-          <div className="tst" style={{ position: 'relative', minHeight: '300px' }}>
+          <div className="tst" style={{ position: 'relative' }}>
             <div className="tst__track" style={{ position: 'relative' }}>
               {TESTIMONIALS.map((t, idx) => (
                 <figure 

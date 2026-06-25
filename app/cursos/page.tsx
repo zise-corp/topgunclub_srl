@@ -97,20 +97,15 @@ export default function CursosPage() {
       />
 
       {/* 1. Armas de Fuego */}
-      <section id="fuego" className="section grain" style={{ scrollMarginTop: '100px' }}>
+      <section id="fuego" className="section grain" style={{}}>
         <div className="container">
-          <div className="split" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1">
+          <div className="split" style={{ alignItems: 'flex-start', gap: 'clamp(32px,5vw,72px)' }}>
+            <div className="split__media split__media--free reveal" data-d="1">
               <ImageCarousel images={CURSOS[0].images} />
             </div>
-            <div className="reveal" data-d="2">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Icon name="target" style={{ width: 22, height: 22 }} />
-                </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '1rem' }}>{CURSOS[0].eyebrow}</span>
-              </div>
-              <h2 className="section-title" style={{ fontSize: '2.8rem', margin: '14px 0 24px', lineHeight: 1.1 }}>
+            <div className="reveal" data-d="2" style={{ paddingTop: '8px' }}>
+              <span className="eyebrow">{CURSOS[0].eyebrow}</span>
+              <h2 className="section-title" style={{ margin: '12px 0 20px' }}>
                 {CURSOS[0].title.split(' ').slice(0, -2).join(' ')} <em>{CURSOS[0].title.split(' ').slice(-2).join(' ')}</em>
               </h2>
               <p className="lead" style={{ marginBottom: '24px' }}>{CURSOS[0].desc}</p>
@@ -128,17 +123,12 @@ export default function CursosPage() {
       </section>
 
       {/* 2. Airsoft Táctico */}
-      <section id="airsoft" className="section section--tight" style={{ background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', scrollMarginTop: '100px' }}>
+      <section id="airsoft" className="section section--tight" style={{ background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }}>
         <div className="container">
-          <div className="split split--rev" style={{ alignItems: 'center' }}>
-            <div className="reveal" data-d="2">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Icon name="shield" style={{ width: 22, height: 22 }} />
-                </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '1rem' }}>{CURSOS[1].eyebrow}</span>
-              </div>
-              <h2 className="section-title" style={{ fontSize: '2.8rem', margin: '14px 0 24px', lineHeight: 1.1 }}>
+          <div className="split split--rev" style={{ alignItems: 'flex-start', gap: 'clamp(32px,5vw,72px)' }}>
+            <div className="reveal" data-d="2" style={{ paddingTop: '8px' }}>
+              <span className="eyebrow">{CURSOS[1].eyebrow}</span>
+              <h2 className="section-title" style={{ margin: '12px 0 20px' }}>
                 {CURSOS[1].title.split(' ').slice(0, -1).join(' ')} <em>{CURSOS[1].title.split(' ').slice(-1).join(' ')}</em>
               </h2>
               <p className="lead" style={{ marginBottom: '24px' }}>{CURSOS[1].desc}</p>
@@ -151,7 +141,7 @@ export default function CursosPage() {
                 <Icon name="whatsapp" /> {CURSOS[1].ctaText}
               </a>
             </div>
-            <div className="split__media reveal" data-d="1">
+            <div className="split__media split__media--free reveal" data-d="1">
               <ImageCarousel images={CURSOS[1].images} />
             </div>
           </div>
@@ -159,20 +149,15 @@ export default function CursosPage() {
       </section>
 
       {/* 3. Tiro con PCP */}
-      <section id="pcp" className="section grain" style={{ scrollMarginTop: '100px' }}>
+      <section id="pcp" className="section grain" style={{}}>
         <div className="container">
-          <div className="split" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1">
+          <div className="split" style={{ alignItems: 'flex-start', gap: 'clamp(32px,5vw,72px)' }}>
+            <div className="split__media split__media--free reveal" data-d="1">
               <ImageCarousel images={CURSOS[2].images} />
             </div>
-            <div className="reveal" data-d="2">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Icon name="star" style={{ width: 22, height: 22 }} />
-                </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '1rem' }}>{CURSOS[2].eyebrow}</span>
-              </div>
-              <h2 className="section-title" style={{ fontSize: '2.8rem', margin: '14px 0 24px', lineHeight: 1.1 }}>
+            <div className="reveal" data-d="2" style={{ paddingTop: '8px' }}>
+              <span className="eyebrow">{CURSOS[2].eyebrow}</span>
+              <h2 className="section-title" style={{ margin: '12px 0 20px' }}>
                 {CURSOS[2].title.split(' ').slice(0, -2).join(' ')} <em>{CURSOS[2].title.split(' ').slice(-2).join(' ')}</em>
               </h2>
               <p className="lead" style={{ marginBottom: '24px' }}>{CURSOS[2].desc}</p>
@@ -190,17 +175,12 @@ export default function CursosPage() {
       </section>
 
       {/* 4. Arco y Flecha */}
-      <section id="arco" className="section section--tight" style={{ background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', opacity: 0.85, scrollMarginTop: '100px' }}>
+      <section id="arco" className="section section--tight" style={{ background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', opacity: 0.85 }}>
         <div className="container">
-          <div className="split split--rev" style={{ alignItems: 'center' }}>
-            <div className="reveal" data-d="2">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Icon name="target" style={{ width: 22, height: 22 }} />
-                </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em', fontSize: '1rem' }}>{CURSOS[3].eyebrow}</span>
-              </div>
-              <h2 className="section-title" style={{ fontSize: '2.8rem', margin: '14px 0 24px', lineHeight: 1.1 }}>
+          <div className="split split--rev" style={{ alignItems: 'flex-start', gap: 'clamp(32px,5vw,72px)' }}>
+            <div className="reveal" data-d="2" style={{ paddingTop: '8px' }}>
+              <span className="eyebrow">{CURSOS[3].eyebrow}</span>
+              <h2 className="section-title" style={{ margin: '12px 0 20px' }}>
                 {CURSOS[3].title.split(' ').slice(0, -2).join(' ')} <em>{CURSOS[3].title.split(' ').slice(-2).join(' ')}</em>
               </h2>
               <p className="lead" style={{ marginBottom: '24px' }}>{CURSOS[3].desc}</p>
@@ -213,7 +193,7 @@ export default function CursosPage() {
                 <Icon name="clock" style={{ width: 20, height: 20 }} /> {CURSOS[3].ctaText}
               </span>
             </div>
-            <div className="split__media reveal" data-d="1">
+            <div className="split__media split__media--free reveal" data-d="1">
               <ImageCarousel images={CURSOS[3].images} comingSoon />
             </div>
           </div>

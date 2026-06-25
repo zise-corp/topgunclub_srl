@@ -20,12 +20,14 @@ export default function Footer() {
 
           {/* Columna 1: Marca */}
           <div className="footer__brand">
-            <Image 
-              src="https://res.cloudinary.com/dj5yikcc4/image/upload/v1781744683/Logo_cdzhn9.png" 
-              alt="Top Gun Club SRL" 
-              height={54} 
-              width={216} 
-              style={{ width: 'auto', height: '54px', marginBottom: '18px' }} 
+            <Image
+              src="/images/logoTopGunClub.png"
+              alt="Top Gun Club SRL"
+              height={1024}
+              width={1536}
+              quality={100}
+              className="footer__logo footer__logo--desktop"
+              style={{ width: 'auto', height: '48px', marginBottom: '14px' }}
             />
             <p>Club y escuela de tiro deportivo en Cochabamba, Bolivia. Polígono bajo techo, cursos, airsoft, PCP, eventos y servicio de comida. El lugar perfecto para cualquier ocasión.</p>
             <div className="footer__social">
@@ -33,6 +35,15 @@ export default function Footer() {
               <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Icon name="instagram" /></a>
               <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok"><Icon name="tiktok" /></a>
             </div>
+            <Image
+              src="/images/logoTopGunClub.png"
+              alt="Top Gun Club SRL"
+              height={1024}
+              width={1536}
+              quality={100}
+              className="footer__logo footer__logo--mobile"
+              style={{ width: 'auto', height: '38px' }}
+            />
           </div>
 
           {/* Columna 2: Navegación */}

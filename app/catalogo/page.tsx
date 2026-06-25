@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import RevealObserver from '@/components/RevealObserver';
+import CatalogoIntroClient from '@/components/CatalogoIntroClient';
 import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
 import { waLink } from '@/lib/site';
@@ -109,6 +110,7 @@ const PCP_WEAPONS = [
 export default function CatalogoPage() {
   return (
     <>
+      <CatalogoIntroClient />
       <RevealObserver />
 
       <style>{`
@@ -120,19 +122,19 @@ export default function CatalogoPage() {
           flex-direction: column;
           transition: border-color 0.2s;
         }
-        .prod-card:hover { border-color: rgba(74,222,128,0.4); }
+        .prod-card:hover { border-color: rgba(74,222,128,0.4); box-shadow: 0 0 32px -8px rgba(201,158,102,0.22); }
         .prod-img:hover  { transform: scale(1.03); }
       `}</style>
 
       <PageHero
         crumb="Catálogo"
         label="Armas y equipamiento"
-        title={<>Catálogo <span className="hl" style={{ display: 'inline' }}>2025</span></>}
+        title={<>Catálogo <span className="hl" style={{ display: 'inline' }}>2026</span></>}
         sub="Armas de fuego y PCP de las mejores marcas. Precios actualizados y especificaciones técnicas. Consultanos por WhatsApp para reservar."
       />
 
       {/* ── Armas de Fuego ─────────────────────────────────────────────────── */}
-      <section id="fuego" className="section grain" style={{ scrollMarginTop: '100px' }}>
+      <section id="fuego" className="section grain" style={{}}>
         <div className="container">
           <div className="shead center reveal">
             <span className="eyebrow eyebrow--center">Armamento</span>
@@ -171,7 +173,7 @@ export default function CatalogoPage() {
       </section>
 
       {/* ── Rifles PCP ─────────────────────────────────────────────────────── */}
-      <section id="pcp" className="section section--tight" style={{ background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)', scrollMarginTop: '100px' }}>
+      <section id="pcp" className="section section--tight" style={{ background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }}>
         <div className="container">
           <div className="shead center reveal">
             <span className="eyebrow eyebrow--center">Aire comprimido · Hatsan</span>

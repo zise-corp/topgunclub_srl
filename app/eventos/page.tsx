@@ -66,20 +66,15 @@ export default function EventosPage() {
       />
 
       {/* 1. Cumpleaños Infantiles */}
-      <section id="cumpleanos" className="section grain" style={{ scrollMarginTop: '100px' }}>
+      <section id="cumpleanos" className="section grain">
         <div className="container">
-          <div className="split" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1">
+          <div className="split" style={{ alignItems: 'flex-start', gap: 'clamp(32px,5vw,72px)' }}>
+            <div className="split__media split__media--free reveal" data-d="1">
               <ImageCarousel images={CUMPLE_IMGS} />
             </div>
-            <div className="reveal" data-d="2">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Icon name="star" style={{ width: 22, height: 22 }} />
-                </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Cumpleaños Infantiles</span>
-              </div>
-              <h2 className="section-title" style={{ margin: '0 0 18px' }}>
+            <div className="reveal" data-d="2" style={{ paddingTop: '8px' }}>
+              <span className="eyebrow">Cumpleaños Infantiles</span>
+              <h2 className="section-title" style={{ margin: '12px 0 16px' }}>
                 Un cumple <em>inolvidable</em>
               </h2>
               <p className="lead" style={{ marginBottom: '24px' }}>
@@ -114,24 +109,18 @@ export default function EventosPage() {
         className="section section--tight" 
         style={{ 
           background: 'linear-gradient(180deg,#0d0f0e,var(--bg))', 
-          borderTop: '1px solid var(--line)', 
+          borderTop: '1px solid var(--line)',
           borderBottom: '1px solid var(--line)',
-          scrollMarginTop: '100px'
         }}
       >
         <div className="container">
-          <div className="split split--rev" style={{ alignItems: 'center' }}>
-            <div className="split__media reveal" data-d="1">
+          <div className="split split--rev" style={{ alignItems: 'flex-start', gap: 'clamp(32px,5vw,72px)' }}>
+            <div className="split__media split__media--free reveal" data-d="1">
               <ImageCarousel images={TORNEO_IMGS} />
             </div>
-            <div className="reveal" data-d="2">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div className="ico" style={{ width: 42, height: 42, borderRadius: 10, background: 'var(--green-deep)', color: 'var(--green-bright)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Icon name="target" style={{ width: 22, height: 22 }} />
-                </div>
-                <span className="eyebrow" style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Torneos Mensuales</span>
-              </div>
-              <h2 className="section-title" style={{ margin: '0 0 18px' }}>
+            <div className="reveal" data-d="2" style={{ paddingTop: '8px' }}>
+              <span className="eyebrow">Torneos Mensuales</span>
+              <h2 className="section-title" style={{ margin: '12px 0 16px' }}>
                 Competí con los <em>mejores</em>
               </h2>
               <p className="lead" style={{ marginBottom: '24px' }}>

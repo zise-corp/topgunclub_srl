@@ -47,7 +47,7 @@ export default function EscuelaTeaser() {
                 href={waLink('Hola! Quiero obtener más detalles sobre la Escuela de Tiro y el Polígono')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn--light"
+                className="btn btn--wa"
               >
                 <Icon name="whatsapp" /> Obtener más detalles
               </a>

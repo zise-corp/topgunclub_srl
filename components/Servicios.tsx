@@ -76,7 +76,7 @@ export default function Servicios() {
             profesionalismo como base de cada experiencia.
           </p>
         </div>
-        <div className="grid cols-3">
+        <div className="grid cols-3 svc-grid">
           {SERVICES.map((s, i) => (
             <Link className="card svc reveal" data-d={(i % 3) + 1} href={s.href} key={s.title}>
               <div className="svc__img">
