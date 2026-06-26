@@ -130,7 +130,7 @@ export default function CatalogoPage() {
         crumb="Catálogo"
         label="Armas y equipamiento"
         title={<>Catálogo <span className="hl" style={{ display: 'inline' }}>2026</span></>}
-        sub="Armas de fuego y PCP de las mejores marcas. Precios actualizados y especificaciones técnicas. Consultanos por WhatsApp para reservar."
+        sub="Armas de fuego y PCP de las mejores marcas. Precios actualizados y especificaciones técnicas."
       />
 
       {/* ── Armas de Fuego ─────────────────────────────────────────────────── */}

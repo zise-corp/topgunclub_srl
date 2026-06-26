@@ -21,19 +21,19 @@ const FAQS = [
   },
   {
     q: '¿Puedo organizar un cumpleaños para mi hijo/a?',
-    a: '¡Claro! Ofrecemos paquetes de cumpleaños infantiles con actividades adaptadas (PCP, airsoft suave, arco), supervisadas por instructores certificados. Incluye espacio para celebración y opción de catering. Pedí tu cotización por WhatsApp.',
+    a: '¡Claro! Ofrecemos paquetes de cumpleaños infantiles con actividades adaptadas (PCP, airsoft suave, arco), supervisadas por instructores certificados. Incluye espacio para celebración y opción de catering. Pide tu cotización por WhatsApp.',
   },
   {
     q: '¿Cómo funcionan los torneos mensuales?',
-    a: 'Una vez al mes realizamos torneos oficiales exclusivos para alumnos que ya completaron un curso con nosotros. Hay competencias en armas de fuego, airsoft y PCP, con premios y ranking mensual. Escribinos para inscribirte.',
+    a: 'Una vez al mes realizamos torneos oficiales exclusivos para alumnos que ya completaron un curso con nosotros. Hay competencias en armas de fuego, airsoft y PCP, con premios y ranking mensual. Escríbenos para inscribirte.',
   },
   {
     q: '¿Cuándo inician los cursos de Arco y Flecha?',
-    a: 'El curso de Arco y Flecha está próximamente. Si querés ser de los primeros en enterarte cuando abra la inscripción, escribinos por WhatsApp y te avisamos apenas tengamos fecha.',
+    a: 'El curso de Arco y Flecha está muy cerca. Si quieres ser de los primeros en enterarte cuando se habiliten las inscripciones, escríbenos por WhatsApp y te avisamos apenas tengamos fechas disponibles.',
   },
   {
     q: '¿Cómo reservo?',
-    a: 'La forma más rápida es por WhatsApp. Escribinos, te asesoramos según lo que buscás (curso, cumpleaños, torneo o práctica libre) y coordinamos día y horario.',
+    a: 'La forma más rápida es por WhatsApp. Escríbenos, te asesoramos según lo que buscas (curso, cumpleaños, torneo o práctica libre) y coordinamos día y horario.',
   },
 ] as const;
 

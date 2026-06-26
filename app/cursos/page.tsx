@@ -34,7 +34,7 @@ const CURSOS: Curso[] = [
     desc: 'Formación completa en manejo, técnica de disparo y seguridad. Nuestro enfoque es 100% deportivo y formativo, cumpliendo estrictamente la Ley 400. Ideal tanto para quienes nunca han tocado un arma como para tiradores que buscan perfeccionar su técnica.',
     feats: ['Protocolo de seguridad estricto', 'Instructores certificados', 'Equipo de protección auditiva y visual', 'Progresión de novato a experto'],
     ctaMsg: 'Hola! Quiero información sobre el curso de Armas de Fuego',
-    ctaText: 'Reservar curso',
+    ctaText: 'Me interesa este curso',
     images: [
       'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811129/Fuego_uyzbo5.png',
       'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811124/Fuego2_a95akj.png',
@@ -48,7 +48,7 @@ const CURSOS: Curso[] = [
     desc: 'Deporte de estrategia y simulación militar en el que los participantes utilizan réplicas exactas de armas de fuego para enfrentarse en escenarios tácticos. Vive la adrenalina del airsoft en un entorno seguro, organizado y con supervisión profesional. Perfecto para trabajo en equipo, estrategia, despedidas, cumpleaños y team building empresarial. Pura diversión con disciplina.',
     feats: ['Escenarios y dinámicas para grupos', 'Briefing y reglas de seguridad previas', 'Equipamiento y protección disponible', 'Para principiantes y jugadores con experiencia'],
     ctaMsg: 'Hola! Quiero información sobre el curso o experiencia de Airsoft',
-    ctaText: 'Reservar Airsoft',
+    ctaText: 'Me interesa este curso',
     images: [
       'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811126/Airsoft_fuffew.png',
       'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811126/Airsoft2_l5itfo.png',
@@ -62,7 +62,7 @@ const CURSOS: Curso[] = [
     desc: 'El tiro con armas de aire comprimido (PCP) es una disciplina de alta precisión, similar al tiro olímpico. Es silencioso, técnico y excelente para desarrollar concentración, postura y control. Ideal para todas las edades.',
     feats: ['Enfoque en precisión y técnica', 'Menor ruido y retroceso', 'Ideal para iniciación y competición', 'Supervisión constante de postura'],
     ctaMsg: 'Hola! Quiero información sobre el curso de tiro con PCP',
-    ctaText: 'Reservar curso PCP',
+    ctaText: 'Me interesa este curso',
     images: [
       'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811127/PCP_mv46rn.png',
       'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811128/PCP2_zt6iey.png',
@@ -76,7 +76,7 @@ const CURSOS: Curso[] = [
     desc: 'Una nueva disciplina que se suma a nuestro club. El tiro con arco desarrolla concentración, fuerza, técnica tradicional y control mental. Una experiencia única y diferente para toda la familia.',
     feats: ['Técnica tradicional y moderna', 'Desarrollo de concentración', 'Actividad apta para toda la familia', 'Instructores especializados'],
     ctaMsg: 'Hola! Quiero saber cuándo inician los cursos de Arco y Flecha',
-    ctaText: 'Avísame cuando inicie',
+    ctaText: 'PROXIMAMENTE',
     comingSoon: true,
     images: [
       'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781811127/Arco1_dkyqge.png',
@@ -93,7 +93,7 @@ export default function CursosPage() {
         crumb="Cursos"
         label="Programas de formación"
         title={<>Nuestras <span className="hl" style={{ display: 'inline' }}>disciplinas</span></>}
-        sub="Elegí tu camino. Desde tu primera vez en el polígono hasta la técnica de competición, tenemos un programa estructurado y seguro para vos."
+        sub="Elegí tu camino. Desde tu primera vez en el polígono hasta la técnica de competición, tenemos un programa estructurado y seguro para ti."
       />
 
       {/* 1. Armas de Fuego */}
