@@ -24,6 +24,14 @@ Next.js 15 (App Router) site for **Top Gun Club SRL** — an indoor shooting ran
 - `lib/site.ts` — single source of truth for contact info (`WA_PHONE`, `PHONE_DISPLAY`), social links (`SOCIALS`), `waLink()` helper, and `NAV_ITEMS` nav config.
 - `lib/cloudinary.ts` — Cloudinary config and `getCloudinaryImage()` helper. Cloud name comes from `NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME`.
 
+### No backend — everything routes to WhatsApp
+
+There are no API routes, database, or server actions. The contact form (`ContactForm.tsx`) and every CTA build a prefilled WhatsApp URL via `waLink()` in `lib/site.ts` and open it with `window.open`. Validation is client-side only. When adding "submit"-style features, follow this pattern rather than introducing a backend.
+
+### Language
+
+UI copy, code comments, and many identifiers are in Spanish (`INTERESES`, `nombre`, `telefono`). Match this when editing user-facing strings.
+
 ### Scroll-reveal pattern
 
 Elements get the CSS class `reveal` to animate in on scroll. `RevealObserver` (a client component that renders null) is placed at the top of each page to activate the `useReveal` hook, which sets up the IntersectionObserver. This pattern is used on every page.
