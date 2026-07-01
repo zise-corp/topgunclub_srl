@@ -8,7 +8,7 @@ import Testimonios from '@/components/Testimonios';
 import FinalCta from '@/components/FinalCta';
 
 export const metadata: Metadata = {
-  title: 'Top Gun Club SRL · Polígono de tiro Multifuncional en Cochabamba',
+  title: 'Top Gun Club SRL',
   description:
     'Top Gun Club SRL: Polígono de tiro deportivo bajo techo en Cochabamba, Bolivia. Armas de fuego, Airsoft, PCP, Torneos, Espacio para cumpleaños.',
   openGraph: {

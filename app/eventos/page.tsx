@@ -19,7 +19,7 @@ const CUMPLE_INCLUYE = [
   'Equipo de protección incluido para todos',
   'Espacio amplio para celebración y comida',
   'Opción de catering y servicio de comida',
-  'Ambiente seguro y controlado bajo Ley 400',
+  'Ambiente seguro y controlado',
 ] as const;
 
 const TORNEO_FEATS = [
@@ -91,12 +91,12 @@ export default function EventosPage() {
                 ))}
               </ul>
               <a
-                href={waLink('Hola! Quiero cotizar un cumpleaños infantil en Top Gun Club')}
+                href={waLink('Hola! Me gustaria tener mas información sobre los cumpleaños infantiles en Top Gun Club')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn--wa btn--lg"
               >
-                <Icon name="whatsapp" /> Cotizar cumpleaños
+                <Icon name="whatsapp" /> Mas Información
               </a>
             </div>
           </div>
@@ -121,7 +121,7 @@ export default function EventosPage() {
             <div className="reveal" data-d="2" style={{ paddingTop: '8px' }}>
               <span className="eyebrow">Torneos Mensuales</span>
               <h2 className="section-title" style={{ margin: '12px 0 16px' }}>
-                Competí con los <em>mejores</em>
+                Compite con los <em>mejores</em>
               </h2>
               <p className="lead" style={{ marginBottom: '24px' }}>
                 Una vez al mes abrimos el polígono para nuestros torneos oficiales. Una oportunidad 
@@ -142,7 +142,7 @@ export default function EventosPage() {
                 rel="noopener noreferrer"
                 className="btn btn--wa btn--lg"
               >
-                <Icon name="whatsapp" /> Inscribirme al torneo
+                <Icon name="whatsapp" /> Quiero ser parte de los torneos
               </a>
             </div>
           </div>
