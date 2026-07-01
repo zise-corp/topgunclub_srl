@@ -45,7 +45,11 @@ export const viewport: Viewport = {
   themeColor: '#0A0A0A',
 };
 
+const OG_IMAGE =
+  'https://res.cloudinary.com/dj5yikcc4/image/upload/c_pad,w_1200,h_630,b_rgb:0A0A0A/v1781744683/Logo_cdzhn9.png';
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://topgunclub.com.bo'),
   icons: {
     icon: {
       url: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781744683/Logo_cdzhn9.png',
@@ -59,6 +63,23 @@ export const metadata: Metadata = {
   openGraph: {
     locale: 'es_BO',
     type: 'website',
+    siteName: 'Top Gun Club SRL',
+    url: 'https://topgunclub.com.bo',
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: 'Top Gun Club SRL',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Top Gun Club SRL · Polígono de tiro Deportivo',
+    description: 'El lugar perfecto para cualquier evento. Ambientes amplios, comida, tiro deportivo y más.',
+    images: [OG_IMAGE],
   },
 };
 

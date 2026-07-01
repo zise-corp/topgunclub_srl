@@ -307,6 +307,30 @@ ul{ list-style:none; }
 }
 .ley400 b{ color:var(--green-bright); }
 
+/* Crédito de desarrollo — —— ZISE —— */
+.footer__credit{
+  margin-top:18px; padding-top:18px;
+  border-top:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center; gap:16px;
+}
+.footer__credit::before,
+.footer__credit::after{
+  content:""; width:46px; height:1px; flex:0 0 auto;
+  background:var(--faint);
+  transition:background-color .3s var(--ease);
+}
+.footer__credit::before{ -webkit-mask:linear-gradient(90deg, transparent, #000); mask:linear-gradient(90deg, transparent, #000); }
+.footer__credit::after{  -webkit-mask:linear-gradient(90deg, #000, transparent); mask:linear-gradient(90deg, #000, transparent); }
+.dev-credit{
+  font-family:var(--ff-display); font-weight:700;
+  font-size:.95rem; letter-spacing:.3em; text-indent:.3em;
+  color:var(--faint);
+  transition:color .3s var(--ease);
+}
+.footer__credit:hover::before,
+.footer__credit:hover::after{ background:var(--gold); }
+.footer__credit:hover .dev-credit{ color:var(--gold); }
+
 /* ============================================================
    FLOATING ACTIONS
    ============================================================ */

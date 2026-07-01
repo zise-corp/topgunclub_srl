@@ -108,6 +108,18 @@ export default function Footer() {
             {' '}Actividad realizada cumpliendo la <b>Ley&nbsp;400</b> — uso y manejo seguro de armas con fines deportivos.
           </span>
         </div>
+
+        <div className="footer__credit">
+          <a
+            href="https://zise.lat/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="dev-credit"
+            aria-label="Desarrollado por ZISE — visitar zise.lat"
+          >
+            ZISE
+          </a>
+        </div>
       </div>
     </footer>
   );

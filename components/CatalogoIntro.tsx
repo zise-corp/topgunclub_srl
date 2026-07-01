@@ -18,20 +18,46 @@ async function playGunshot() {
   } catch {}
 }
 
+const ANIM_IMAGES = ['/images/arma.png', '/images/bala.png', '/images/hoyo.png'];
+
 export default function CatalogoIntro() {
   const [phase, setPhase] = useState<'gun' | 'bullet' | 'hole' | 'done'>('gun');
+  const [ready, setReady] = useState(false);
   const [isMobile] = useState<boolean>(() =>
     typeof window !== 'undefined' && window.innerWidth < 768
   );
   const firedRef = useRef(false);
 
+  // Preload the animation frames before starting the timeline. Otherwise, on a
+  // cold (uncached) deployed load the fixed timers fire before the images finish
+  // downloading and the bullet/hole frames render blank. A fallback timeout
+  // ensures the animation still plays if the network is slow or an image fails.
   useEffect(() => {
     if (isMobile) return;
+    let cancelled = false;
+    let loaded = 0;
+    const done = () => {
+      if (cancelled) return;
+      loaded += 1;
+      if (loaded >= ANIM_IMAGES.length) setReady(true);
+    };
+    ANIM_IMAGES.forEach(src => {
+      const img = new window.Image();
+      img.onload = done;
+      img.onerror = done;
+      img.src = src;
+    });
+    const fallback = setTimeout(() => { if (!cancelled) setReady(true); }, 1500);
+    return () => { cancelled = true; clearTimeout(fallback); };
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (isMobile || !ready) return;
     const t1 = setTimeout(() => setPhase('bullet'), 200);
     const t2 = setTimeout(() => setPhase('hole'),   380);
     const t3 = setTimeout(() => setPhase('done'),  1300);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-  }, [isMobile]);
+  }, [isMobile, ready]);
 
   useEffect(() => {
     if (phase === 'bullet' && !firedRef.current) {
@@ -147,7 +173,7 @@ export default function CatalogoIntro() {
           }}>
             <Image src="/images/arma.png" alt="Arma" width={280} height={280}
               style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
-              priority
+              priority unoptimized
             />
           </div>
         )}
@@ -163,7 +189,7 @@ export default function CatalogoIntro() {
           }}>
             <Image src="/images/bala.png" alt="Bala" width={52} height={52}
               style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
-              priority
+              priority unoptimized
             />
           </div>
         )}
@@ -179,7 +205,7 @@ export default function CatalogoIntro() {
           }}>
             <Image src="/images/hoyo.png" alt="Impacto" width={900} height={900}
               style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
-              priority
+              priority unoptimized
             />
           </div>
         )}

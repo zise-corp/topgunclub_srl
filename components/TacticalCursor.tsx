@@ -9,10 +9,12 @@ export default function TacticalCursor() {
   const raf     = useRef<number>(0);
   const [state, setState] = useState<'default' | 'hover' | 'click'>('default');
   const [inNav, setInNav] = useState(false);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    // hide on touch devices
+    // don't render/activate on touch devices (no mouse cursor)
     if (window.matchMedia('(pointer: coarse)').matches) return;
+    setEnabled(true);
 
     document.documentElement.style.cursor = 'none';
 
@@ -20,9 +22,11 @@ export default function TacticalCursor() {
       pos.current = { x: e.clientX, y: e.clientY };
 
       const t = e.target as HTMLElement;
-      const inNavbar = !!t.closest('.nav');
-      setInNav(inNavbar);
-      if (inNavbar) {
+      // Zones that use the native cursor and hide the crosshair: the navbar and
+      // any modal marked with data-native-cursor (avoids double cursor + lag).
+      const nativeZone = !!t.closest('.nav, [data-native-cursor]');
+      setInNav(nativeZone);
+      if (nativeZone) {
         document.documentElement.style.cursor = 'auto';
         setState('default');
         return;
@@ -72,6 +76,9 @@ export default function TacticalCursor() {
     };
   }, []);
 
+  // On touch devices nothing is rendered, so the crosshair can't get stuck at 0,0
+  if (!enabled) return null;
+
   const isHover = state === 'hover';
   const isClick = state === 'click';
 
@@ -91,6 +98,7 @@ export default function TacticalCursor() {
         background: isHover ? '#fff' : '#C99E66',
         boxShadow: isHover ? '0 0 6px 2px rgba(255,255,255,.4)' : '0 0 4px 1px rgba(201,158,102,.6)',
         transition: 'width .15s ease, height .15s ease, background .2s ease, box-shadow .2s ease',
+        willChange: 'transform',
       }} />
 
       {/* Mira táctica */}
@@ -101,6 +109,7 @@ export default function TacticalCursor() {
         width: ringSize, height: ringSize,
         transition: 'width .25s cubic-bezier(.34,1.56,.64,1), height .25s cubic-bezier(.34,1.56,.64,1), opacity .2s ease',
         opacity: ringOpacity,
+        willChange: 'transform',
       }}>
         {/* Círculo */}
         <svg width={ringSize} height={ringSize} viewBox="0 0 44 44" style={{ position: 'absolute', inset: 0 }}>

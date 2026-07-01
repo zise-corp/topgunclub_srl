@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useCallback, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import ReactCountryFlag from 'react-country-flag';
 
@@ -21,12 +22,14 @@ export default function ProductLightbox({
   price, imageUrl, alt, specs, waHref, onClose,
 }: Props) {
   const [fullImg, setFullImg] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const handleKey = useCallback(
     (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); },
     [onClose]
   );
 
   useEffect(() => {
+    setMounted(true);
     document.addEventListener('keydown', handleKey);
     document.body.style.overflow = 'hidden';
     return () => {
@@ -35,14 +38,20 @@ export default function ProductLightbox({
     };
   }, [handleKey]);
 
-  return (
+  // Portal to <body> so the modal escapes the `.container` stacking context
+  // (position:relative; z-index:1) that otherwise lets the navbar paint over it.
+  if (!mounted) return null;
+
+  return createPortal(
     <>
+    {/* The crosshair stays active inside the modal; the CSS below hides the
+        native cursor so there's no double cursor. Only the close X opts out via
+        data-native-cursor (native pointer, no crosshair). */}
     <div onClick={onClose} className="prod-lightbox-wrap" style={{
       position: 'fixed', inset: 0, zIndex: 1000,
       background: 'rgba(4,6,5,0.96)',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       padding: '20px', cursor: 'zoom-out',
-      backdropFilter: 'blur(10px)',
       animation: 'hud-in 0.22s ease',
     }}>
       <style>{`
@@ -52,9 +61,34 @@ export default function ProductLightbox({
         @keyframes blink { 0%,100% { opacity:1; } 50% { opacity:.3; } }
         .plb-close { transition: background .35s ease, border-color .35s ease, transform .35s cubic-bezier(.34,1.56,.64,1), color .35s ease; }
         .plb-close:hover { background: rgba(201,158,102,.2) !important; border-color: rgba(201,158,102,.8) !important; transform: rotate(135deg) scale(1.15); color: #fff !important; }
+        /* Crosshair-only inside the modal: hide the native cursor everywhere so it
+           doesn't double up with the crosshair. The close X is the exception. */
+        .prod-lightbox-wrap, .prod-lightbox-wrap *,
+        .plb-fullimg, .plb-fullimg * { cursor: none !important; }
+        .plb-close, .plb-fullimg__close { cursor: pointer !important; }
         .hud-spec-row { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.05); animation: hud-slide .35s ease both; }
         .hud-spec-row:last-child { border-bottom:none; }
         .hud-corner { position:absolute; width:18px; height:18px; border-color:#C99E66; border-style:solid; opacity:.6; }
+
+        /* ── Mobile: single column, panel scrolls, image on top ── */
+        @media (max-width: 760px) {
+          .prod-lightbox-wrap { padding: 12px !important; }
+          .prod-lightbox {
+            grid-template-columns: 1fr !important;
+            max-height: 90vh !important;
+            overflow-y: auto !important;
+          }
+          .prod-lightbox__img {
+            min-height: 210px !important;
+            border-right: none !important;
+            border-bottom: 1px solid rgba(201,158,102,.12) !important;
+          }
+          .prod-lightbox__data {
+            max-height: none !important;
+            overflow: visible !important;
+            padding: 26px 20px 24px !important;
+          }
+        }
       `}</style>
 
       {/* Tactical grid background */}
@@ -142,7 +176,7 @@ export default function ProductLightbox({
           position: 'relative',
         }}>
           {/* close button */}
-          <button onClick={onClose} aria-label="Cerrar" className="plb-close" style={{
+          <button onClick={onClose} aria-label="Cerrar" data-native-cursor className="plb-close" style={{
             position: 'absolute', top: 16, right: 16, zIndex: 10,
             width: 34, height: 34, borderRadius: 6,
             border: '1px solid rgba(201,158,102,.3)',
@@ -219,17 +253,20 @@ export default function ProductLightbox({
     {fullImg && (
       <div
         onClick={() => setFullImg(false)}
+        className="plb-fullimg"
         style={{
           position: 'fixed', inset: 0, zIndex: 1100,
           background: 'rgba(0,0,0,0.96)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          cursor: 'zoom-out', backdropFilter: 'blur(8px)',
+          cursor: 'zoom-out',
           animation: 'hud-in .18s ease',
         }}
       >
         <button
           onClick={() => setFullImg(false)}
           aria-label="Cerrar"
+          data-native-cursor
+          className="plb-fullimg__close"
           style={{
             position: 'fixed', top: 20, right: 20, zIndex: 1101,
             width: 38, height: 38, borderRadius: 6,
@@ -248,6 +285,7 @@ export default function ProductLightbox({
         />
       </div>
     )}
-    </>
+    </>,
+    document.body
   );
 }
