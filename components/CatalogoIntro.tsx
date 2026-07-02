@@ -18,7 +18,7 @@ async function playGunshot() {
   } catch {}
 }
 
-const ANIM_IMAGES = ['/images/arma.png', '/images/bala.png', '/images/hoyo.png'];
+const ANIM_IMAGES = ['/images/arma.webp', '/images/bala.webp', '/images/hoyo.webp'];
 
 export default function CatalogoIntro() {
   const [phase, setPhase] = useState<'gun' | 'bullet' | 'hole' | 'done'>('gun');
@@ -30,8 +30,9 @@ export default function CatalogoIntro() {
 
   // Preload the animation frames before starting the timeline. Otherwise, on a
   // cold (uncached) deployed load the fixed timers fire before the images finish
-  // downloading and the bullet/hole frames render blank. A fallback timeout
-  // ensures the animation still plays if the network is slow or an image fails.
+  // downloading and the bullet/hole frames render blank. If the network is so
+  // slow the frames aren't in within the timeout, skip the intro entirely —
+  // a decorative animation should never hold the page hostage.
   useEffect(() => {
     if (isMobile) return;
     let cancelled = false;
@@ -47,8 +48,10 @@ export default function CatalogoIntro() {
       img.onerror = done;
       img.src = src;
     });
-    const fallback = setTimeout(() => { if (!cancelled) setReady(true); }, 1500);
-    return () => { cancelled = true; clearTimeout(fallback); };
+    const skip = setTimeout(() => {
+      if (!cancelled && loaded < ANIM_IMAGES.length) setPhase('done');
+    }, 2000);
+    return () => { cancelled = true; clearTimeout(skip); };
   }, [isMobile]);
 
   useEffect(() => {
@@ -171,7 +174,7 @@ export default function CatalogoIntro() {
             animation: phase === 'bullet' ? 'gun-recoil 0.18s ease both' : 'gun-in 0.15s ease both',
             pointerEvents: 'none', zIndex: 3,
           }}>
-            <Image src="/images/arma.png" alt="Arma" width={280} height={280}
+            <Image src="/images/arma.webp" alt="Arma" width={280} height={280}
               style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
               priority unoptimized
             />
@@ -187,7 +190,7 @@ export default function CatalogoIntro() {
             animation: 'bullet-zoom 0.32s cubic-bezier(.15,0,.35,1) both',
             pointerEvents: 'none', zIndex: 4,
           }}>
-            <Image src="/images/bala.png" alt="Bala" width={52} height={52}
+            <Image src="/images/bala.webp" alt="Bala" width={52} height={52}
               style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
               priority unoptimized
             />
@@ -203,7 +206,7 @@ export default function CatalogoIntro() {
             animation: 'hole-appear 0.32s cubic-bezier(.2,0,.3,1) both',
             pointerEvents: 'none', zIndex: 20,
           }}>
-            <Image src="/images/hoyo.png" alt="Impacto" width={900} height={900}
+            <Image src="/images/hoyo.webp" alt="Impacto" width={900} height={900}
               style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
               priority unoptimized
             />
