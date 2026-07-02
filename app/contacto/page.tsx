@@ -21,8 +21,8 @@ export default function ContactoPage() {
       <PageHero
         crumb="Contacto"
         label="Cochabamba, Bolivia"
-        title={<>Hablemos & <span className="hl" style={{ display: 'inline' }}>reservá</span></>}
-        sub="Escribinos por WhatsApp para reservar tu cupo, cotizar un cumpleaños o resolver cualquier duda. Estamos para ayudarte."
+        title={<>Hablemos & <span className="hl" style={{ display: 'inline' }}>reserva</span></>}
+        sub="Comunícate por WhatsApp para reservar tu cupo, cotizar un cumpleaños o resolver cualquier duda. Estamos para ayudarte."
       />
 
       {/* Contacto + formulario */}
@@ -72,7 +72,7 @@ export default function ContactoPage() {
               <div className="info-row" style={{ borderBottom: 'none' }}>
                 <div className="ic"><Icon name="star" /></div>
                 <div>
-                  <h4>Seguinos</h4>
+                  <h4>Siguenos en nuestras redes</h4>
                   <div className="contact-socials" style={{ display: 'flex', gap: 10, marginTop: 8, flexWrap: 'wrap' }}>
                     <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" className="btn btn--ghost" style={{ padding: '9px 14px' }}>
                       <Icon name="facebook" style={{ width: 18, height: 18 }} /> Facebook
