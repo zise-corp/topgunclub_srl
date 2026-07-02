@@ -105,7 +105,9 @@ export default function Footer() {
           </p>
           <span className="ley400">
             <Icon name="shield" style={{ width: 16, height: 16 }} />
-            {' '}Actividad realizada cumpliendo la <b>Ley&nbsp;400</b> — uso y manejo seguro de armas con fines deportivos.
+            <span>
+              Actividad realizada cumpliendo la <b>Ley&nbsp;400</b> — uso y manejo seguro de armas con fines deportivos.
+            </span>
           </span>
         </div>
 
