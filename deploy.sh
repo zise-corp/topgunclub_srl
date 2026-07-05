@@ -19,14 +19,14 @@ git pull origin $BRANCH
 echo "🛑 Deteniendo contenedor..."
 docker-compose down
 
-echo "🔨 Construyendo nueva imagen..."
+echo " Construyendo nueva imagen..."
 docker-compose build --no-cache
 
 echo "▶️ Iniciando servicios..."
 docker-compose up -d
 
-echo "🧹 Limpiando imágenes antiguas..."
-docker image prune -f
+echo "🧹 Limpiando recursos innecesarios (caché, contenedores detenidos)..."
+docker system prune -f
 
 echo "✅ Despliegue completado"
 docker-compose ps
