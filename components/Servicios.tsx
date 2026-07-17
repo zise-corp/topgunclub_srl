@@ -43,7 +43,7 @@ const SERVICES: {
     icon: 'clock',
     title: 'Sesiones',
     text: 'Entra a la línea de tiro y siente la adrenalina en su estado más puro. Sesiones guiadas por profesionales, Una experiencia intensa, segura e inolvidable.',
-    href: '/catalogo#fuego',
+    href: '/#sesiones', // ← CAMBIAR ESTO
     img: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781746764/Sesiones_kidi79.jpg',
   },
   {
@@ -80,7 +80,6 @@ export default function Servicios() {
           {SERVICES.map((s, i) => (
             <Link className="card svc reveal" data-d={(i % 3) + 1} href={s.href} key={s.title}>
               <div className="svc__img">
-                {/* Se eliminó el span del badge/icono que tapaba la imagen */}
                 {s.img ? (
                   <Image
                     src={s.img}
