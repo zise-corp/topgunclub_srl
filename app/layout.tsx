@@ -25,15 +25,22 @@ const barlowCondensed = Barlow_Condensed({
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SportsActivityLocation',
+  '@id': 'https://topgunclub.com.bo/#negocio',
   name: 'Top Gun Club SRL',
-  alternateName: 'TG Club SRL',
-  description: 'Escuela y polígono de tiro deportivo bajo techo en Cochabamba, Bolivia. Cursos, airsoft, eventos y servicio de comida.',
+  alternateName: ['TG Club SRL', 'Top Gun Club Cochabamba'],
+  description: 'Escuela y polígono de tiro deportivo bajo techo en Cochabamba, Bolivia. Cursos de armas de fuego, airsoft, rifles PCP, torneos, cumpleaños y eventos.',
+  url: 'https://topgunclub.com.bo',
   telephone: '+59169500967',
+  image: 'https://res.cloudinary.com/dj5yikcc4/image/upload/c_pad,w_1200,h_630,b_rgb:0A0A0A/v1781744683/Logo_cdzhn9.png',
+  logo: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781744683/Logo_cdzhn9.png',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Av. Francisco Bedregal entre Lope de Vega y Mostajo, Zona Temporal',
     addressLocality: 'Cochabamba',
     addressCountry: 'BO',
   },
+  hasMap: 'https://maps.google.com/maps?q=Top+Gun+Club+SRL+Cochabamba+Bolivia',
+  // TODO: cuando haya horarios fijos, agregar openingHoursSpecification con opens/closes reales
   sameAs: [
     'https://www.facebook.com/topgunclubsrl/',
     'https://www.instagram.com/topgunclub_srl/',
@@ -50,6 +57,11 @@ const OG_IMAGE =
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://topgunclub.com.bo'),
+  title: {
+    default: 'Top Gun Club SRL · Polígono de Tiro en Cochabamba, Bolivia',
+    template: '%s',
+  },
+  applicationName: 'Top Gun Club SRL',
   icons: {
     icon: {
       url: 'https://res.cloudinary.com/dj5yikcc4/image/upload/v1781744683/Logo_cdzhn9.png',

@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Catálogo de Armas · Top Gun Club SRL',
   description:
     'Catálogo de armas de fuego y PCP en Top Gun Club Cochabamba. Phoenix Arms, Walther, Smith & Wesson, Rossi, Hatsan y más. Precios y especificaciones.',
+  alternates: { canonical: '/catalogo' },
 };
 
 const BRAND_COUNTRY: Record<string, { code: string; country: string }> = {

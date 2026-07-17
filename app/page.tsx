@@ -8,9 +8,10 @@ import Testimonios from '@/components/Testimonios';
 import FinalCta from '@/components/FinalCta';
 
 export const metadata: Metadata = {
-  title: 'Top Gun Club SRL',
+  title: 'Polígono de Tiro en Cochabamba, Bolivia | Top Gun Club SRL',
   description:
-    'Top Gun Club SRL: Polígono de tiro deportivo bajo techo en Cochabamba, Bolivia. Armas de fuego, Airsoft, PCP, Torneos, Espacio para cumpleaños.',
+    'Polígono y campo de tiro deportivo bajo techo en Cochabamba, Bolivia. Cursos de armas de fuego, airsoft, rifles PCP, torneos y cumpleaños. Reservá por WhatsApp.',
+  alternates: { canonical: '/' },
   openGraph: {
     title: 'Top Gun Club SRL · Polígono de tiro Deportivo',
     description: 'El lugar perfecto para cualquier evento. Ambientes amplios, comida, tiro deportivo y más.',

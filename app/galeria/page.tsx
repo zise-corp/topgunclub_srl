@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Galería · Top Gun Club SRL Cochabamba',
   description:
     'Galería de Top Gun Club: instalaciones del polígono bajo techo, sesiones de tiro deportivo, experiencias de airsoft y eventos en Cochabamba, Bolivia.',
+  alternates: { canonical: '/galeria' },
 };
 
 export default function GaleriaPage() {

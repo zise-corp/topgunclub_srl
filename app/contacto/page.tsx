@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: 'Contacto, Ubicación y FAQ · Top Gun Club SRL',
   description:
     'Contactá a Top Gun Club SRL en Cochabamba, Bolivia. Reservá por WhatsApp (+591 69500967) para cursos de tiro, airsoft, PCP, cumpleaños infantiles y torneos mensuales.',
+  alternates: { canonical: '/contacto' },
 };
 
 export default function ContactoPage() {

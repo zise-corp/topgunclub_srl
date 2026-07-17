@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Cursos de Tiro, Airsoft, PCP y Arco · Top Gun Club SRL',
   description:
     'Cursos de tiro deportivo de Top Gun Club: Armas de fuego, Airsoft, PCP y próximamente Arco y Flecha en Cochabamba. Formación segura bajo la Ley 400.',
+  alternates: { canonical: '/cursos' },
 };
 
 type Curso = {

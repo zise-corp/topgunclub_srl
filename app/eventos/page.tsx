@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'Eventos · Cumpleaños y Torneos · Top Gun Club SRL',
   description:
     'Eventos en Top Gun Club Cochabamba: cumpleaños infantiles con actividades seguras y supervisadas, y torneos mensuales exclusivos para alumnos formados.',
+  alternates: { canonical: '/eventos' },
 };
 
 const CUMPLE_INCLUYE = [
