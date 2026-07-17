@@ -3,6 +3,7 @@ import RevealObserver from '@/components/RevealObserver';
 import Hero from '@/components/Hero';
 import Stats from '@/components/Stats';
 import Servicios from '@/components/Servicios';
+import Sesiones from '@/components/Sesiones';
 import EscuelaTeaser from '@/components/EscuelaTeaser';
 import Testimonios from '@/components/Testimonios';
 import FinalCta from '@/components/FinalCta';
@@ -38,6 +39,7 @@ export default function HomePage() {
       <Hero />
       <Stats />
       <Servicios />
+      <Sesiones />
       <EscuelaTeaser />
       <Testimonios />
       <FinalCta

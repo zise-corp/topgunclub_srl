@@ -1,0 +1,15 @@
+node_modules
+.next
+.git
+.gitignore
+*.md
+.env
+.env.*
+!.env.local
+Dockerfile
+docker-compose.yml
+.dockerignore
+README.md
+CLAUDE.md
+tsconfig.tsbuildinfo
+topgunclub_srl.zip
