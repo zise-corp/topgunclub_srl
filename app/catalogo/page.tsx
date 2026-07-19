@@ -5,11 +5,13 @@ import PageHero from '@/components/PageHero';
 import FinalCta from '@/components/FinalCta';
 import { waLink } from '@/lib/site';
 import ProductCard from '@/components/ProductCard';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Catálogo de Armas · Top Gun Club SRL',
   description:
     'Catálogo de armas de fuego y PCP en Top Gun Club Cochabamba. Phoenix Arms, Walther, Smith & Wesson, Rossi, Hatsan y más. Precios y especificaciones.',
+  keywords: ['venta de armas Bolivia', 'armería Cochabamba', 'rifles PCP Bolivia', 'pistolas Cochabamba', 'escopetas Bolivia', 'Hatsan Bolivia', 'catálogo de armas Cochabamba'],
   alternates: { canonical: '/catalogo' },
 };
 
@@ -107,10 +109,47 @@ const PCP_WEAPONS = [
   },
 ];
 
+// ItemList de productos: permite a Google entender el catálogo (nombre, marca,
+// imagen y precio de cada arma) y mostrar resultados enriquecidos.
+type CatalogItem = { name: string; brand?: string; price: number; image: string };
+
+const ALL_PRODUCTS: CatalogItem[] = [
+  ...FIREARMS.flatMap(s => s.items as CatalogItem[]),
+  ...PCP_WEAPONS.flatMap(s => s.items as CatalogItem[]),
+];
+
+const catalogJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Catálogo de Armas Top Gun Club',
+  itemListElement: ALL_PRODUCTS.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Product',
+      name: item.name,
+      image: item.image,
+      brand: { '@type': 'Brand', name: item.brand ?? 'HATSAN' },
+      offers: {
+        '@type': 'Offer',
+        price: item.price,
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        seller: { '@id': 'https://topgunclub.com.bo/#negocio' },
+      },
+    },
+  })),
+};
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function CatalogoPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(catalogJsonLd) }}
+      />
+      <BreadcrumbJsonLd name="Catálogo" path="/catalogo" />
       <CatalogoIntroClient />
       <RevealObserver />
 

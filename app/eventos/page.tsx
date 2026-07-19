@@ -6,11 +6,13 @@ import FinalCta from '@/components/FinalCta';
 import Icon from '@/components/Icon';
 import ImageCarousel from '@/components/ImageCarousel';
 import { waLink } from '@/lib/site';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Eventos · Cumpleaños y Torneos · Top Gun Club SRL',
   description:
     'Eventos en Top Gun Club Cochabamba: cumpleaños infantiles con actividades seguras y supervisadas, y torneos mensuales exclusivos para alumnos formados.',
+  keywords: ['cumpleaños infantiles Cochabamba', 'lugares para cumpleaños Cochabamba', 'torneos de tiro Bolivia', 'eventos Cochabamba', 'cumpleaños diferentes Cochabamba'],
   alternates: { canonical: '/eventos' },
 };
 
@@ -58,6 +60,7 @@ const AMBIENTE_IMGS = [
 export default function EventosPage() {
   return (
     <>
+      <BreadcrumbJsonLd name="Eventos" path="/eventos" />
       <RevealObserver />
       <PageHero
         crumb="Eventos"

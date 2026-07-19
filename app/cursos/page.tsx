@@ -5,11 +5,13 @@ import FinalCta from '@/components/FinalCta';
 import Icon, { type IconName } from '@/components/Icon';
 import ImageCarousel from '@/components/ImageCarousel';
 import { waLink } from '@/lib/site';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Cursos de Tiro, Airsoft, PCP y Arco · Top Gun Club SRL',
   description:
     'Cursos de tiro deportivo de Top Gun Club: Armas de fuego, Airsoft, PCP y próximamente Arco y Flecha en Cochabamba. Formación segura bajo la Ley 400.',
+  keywords: ['curso de tiro Cochabamba', 'clases de tiro Bolivia', 'curso de armas de fuego Bolivia', 'curso airsoft Cochabamba', 'curso PCP Cochabamba', 'escuela de tiro Cochabamba'],
   alternates: { canonical: '/cursos' },
 };
 
@@ -89,6 +91,7 @@ const CURSOS: Curso[] = [
 export default function CursosPage() {
   return (
     <>
+      <BreadcrumbJsonLd name="Cursos" path="/cursos" />
       <RevealObserver />
       <PageHero
         crumb="Cursos"

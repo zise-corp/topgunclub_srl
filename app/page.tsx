@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: 'Polígono de Tiro en Cochabamba, Bolivia | Top Gun Club SRL',
   description:
     'Polígono y campo de tiro deportivo bajo techo en Cochabamba, Bolivia. Cursos de armas de fuego, airsoft, rifles PCP, torneos y cumpleaños. Reservá por WhatsApp.',
+  keywords: ['polígono de tiro Cochabamba', 'campo de tiro Cochabamba', 'campo de tiro Bolivia', 'tiro deportivo Bolivia', 'Top Gun Club Cochabamba'],
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Top Gun Club SRL · Polígono de tiro Deportivo',

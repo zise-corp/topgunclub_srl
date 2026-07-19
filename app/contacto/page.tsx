@@ -7,17 +7,36 @@ import Icon from '@/components/Icon';
 import ContactForm from '@/components/ContactForm';
 import FaqAccordion from '@/components/FaqAccordion';
 import { SOCIALS, PHONE_DISPLAY, waLink } from '@/lib/site';
+import { FAQS } from '@/lib/faqs';
+import BreadcrumbJsonLd from '@/components/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Contacto, Ubicación y FAQ · Top Gun Club SRL',
   description:
     'Contactá a Top Gun Club SRL en Cochabamba, Bolivia. Reservá por WhatsApp (+591 69500967) para cursos de tiro, airsoft, PCP, cumpleaños infantiles y torneos mensuales.',
+  keywords: ['contacto Top Gun Club', 'polígono de tiro Cochabamba dirección', 'reservar clase de tiro Cochabamba', 'campo de tiro Cochabamba ubicación'],
   alternates: { canonical: '/contacto' },
+};
+
+// FAQPage: habilita el rich result de preguntas desplegables en Google
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
 
 export default function ContactoPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <BreadcrumbJsonLd name="Contacto" path="/contacto" />
       <RevealObserver />
       <PageHero
         crumb="Contacto"
